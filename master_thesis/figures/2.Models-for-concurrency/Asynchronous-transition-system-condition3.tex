@@ -1,0 +1,44 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows,automata,shapes,positioning,decorations.pathmorphing}
+% \tikzset{->,>=stealth',auto}
+\tikzset{->,auto}
+\tikzset{>={Latex[width=2mm,length=2mm]}}
+\tikzset{state/.style={shape=circle, draw, fill=white, initial text=,
+    inner sep=.5mm, minimum size=2mm}}
+\tikzset{state with output/.style={shape=rectangle split, rectangle
+    split parts=2, draw, fill=white,
+    initial text=, inner sep=1mm}}
+\tikzset{every node={font=\footnotesize}}
+\begin{document}
+  \begin{tikzpicture}[node distance=3cm, align=center]
+  \tikzstyle{every node}=[font=\footnotesize]
+    \tikzstyle{every state}=[fill=white,shape=circle,inner sep=.5mm,minimum size=3mm]
+    \title{Condition (3) for asynchronous transition systems}
+    
+    \node[state](q1) [label=left:{$s_{1}$}]                             {};
+    \node[state](q2) [below right of=q1, label=below:{$s_{3}$}]         {};
+    \node[state](q3) [above right of=q1, label={$s_{2}$}]               {};
+    \node(q4) [above right of =q2, label=right:{$aIb$}]                 {};
+    \node(q6) [right of=q1]                                             {};
+    
+    \node[state](q11) [right=10cm, label=left:{$s_{1}$}] {};
+    \node[state](q22) [below right of=q11, label=below:{$s_{3}$}]       {};
+    \node[state](q33) [above right of=q11, label={$s_{2}$}]             {};
+    \node[state](q44) [above right of =q22, label=right:{$u$}]          {};
+    
+    \draw [->][draw=black, thick] (q1) to node [above left] {$a$} (q3);
+    \draw [->][draw=black, thick] (q1) to node [below left] {$b$} (q2);
+    \draw [->][draw=black, thick] (6,0) -- (9,0);
+    
+    \draw [->][draw=black, thick] (q11) to node [below left] {$b$} (q22);
+    \draw [->][draw=black, thick] (q11) to node [above left] {$a$} (q33);
+    \draw [->][draw=black, dotted] (q22) to node [below right] {$a$} (q44);
+    \draw [->][draw=black, dotted] (q33) to node [above right] {$b$} (q44);
+    
+
+    
+  \end{tikzpicture}
+\end{document}
+

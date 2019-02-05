@@ -1,0 +1,32 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows,automata,shapes,positioning,decorations.pathmorphing}
+% \tikzset{->,>=stealth',auto}
+\tikzset{->,auto}
+\tikzset{>={Latex[width=2mm,length=2mm]}}
+\tikzset{state/.style={shape=circle, draw, fill=white, initial text=,
+    inner sep=.5mm, minimum size=2mm}}
+\tikzset{state with output/.style={shape=rectangle split, rectangle
+    split parts=2, draw, fill=white,
+    initial text=, inner sep=1mm}}
+\tikzset{every node={font=\footnotesize}}
+\begin{document}
+  \begin{tikzpicture}[node distance=3cm, align=center]
+  \tikzstyle{every node}=[font=\footnotesize]
+    \tikzstyle{every state}=[fill=white,shape=circle,inner sep=.5mm,minimum size=3mm]
+    \title{A transition system}
+
+    \node[state](q1) [label=left:{$s_{1}$}]                        {};
+    \node[state](q2) [above right of=q1, label=above:{$s_{2}$}]    {};
+    \node[state](q3) [below right of=q1, label=below:{$s_{3}$}]    {};
+    \node[state](q4) [below right of=q2, label=right:{$s_{4}$}]    {};
+    
+    \draw [->][draw=black] (q1) to node [above left] {$b$} (q2);
+    \draw [->][draw=black] (q1) to node [below left] {$a$} (q3);
+    \draw [->][draw=black] (q2) to node [above right] {$a$} (q4);
+    \draw [->][draw=black] (q3) to node [below right] {$b$} (q4);
+    
+  \end{tikzpicture}
+\end{document}
+

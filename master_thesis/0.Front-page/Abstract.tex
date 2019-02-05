@@ -1,0 +1,14 @@
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\chapter*{Abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+    
+    The geometric model, Higher-dimensional automata (HDA), is a useful and general model for non-interleaving concurrency. In a non-interleaving approach to concurrency, more than one event may happen concurrently and one differentiates between concurrent and interleaving executions, satisfying $a \parallel b \neq a.b + b.a$. HDA also encompass all other commonly used models of concurrency. However, due to generality HDAs are challenging to work with. Vaughan Pratt introduced sculptures and Chu spaces as models which retain some of the good properties of HDA as well as being easier to work with. Recently, Johansen has introduced ST-structures as another event-based formalism for the same purpose.
+    
+    This thesis gives a precise definition of sculptures, following the intuition of Pratt, where one can think of the process of modelling a concurrent system using higher-dimensional automata as a \emph{sculpting} process as follows. Take one single higher-dimensional cube, having enough concurrency, and remove cells until the desired concurrent behaviour is obtained. This is different from \emph{composition} where a system is built by composing together smaller systems, which in higher-dimensional automata is done by gluing together cubes.
+    
+    We also develop an algorithm to decide whether a higher-dimensional automaton is a sculpture or not, and use this to show that some simple acyclic higher-dimensional automata are not sculptures. We believe that this contradicts Pratt's intuition that sculptures suffice for the modelling of concurrent behaviour, because not all higher-dimensional automata can be sculpted.
+    
+    We show that sculptures, Chu spaces and ST-structures are in close correspondence. This nicely captures Pratt's event-state duality and tightens the correlation between ST-structures and higher-dimensional automata, which was left as an open problem by Johansen.

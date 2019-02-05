@@ -1,0 +1,93 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,shapes}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Defintion}
+
+\begin{document}
+
+\title{On Bulks and Sculptures}
+
+\author{Christopher A. Trotter}
+
+\maketitle
+
+Our notation used to show that 3$\times$2 2d-grid is a sculpture, in our earlier notes, is influenced by the notion of triadic Chu spaces. A triadic Chu space is a Chu space over 3 = $\{0, 1, 2\}$ for before, during and after, respectively.  By using this notation it seems to provide the expressiveness needed to generalize that any d-dimensional grid is a sculpture.\\
+
+First, we define chu spaces as in [1].
+
+\begin{definition}
+   A chu space over a set K is a triple $A=(E, X, f)$ consisting of sets E and X and a function $f: E \times X \to K$, that is, an $E \times X$ matrix whose elements are drawn from $K$. We write the entry at $(e,x)$ as $f(e,x)$.
+\end{definition}
+
+The elements in set $K=\{0, t, 1\}$ correspond to the adverbs before, during and after, respectively. A Chu space over K in this case is known as a triadic Chu space. Also, X is the set $K^{E}$ such that elements of K are the possible values of an event in a given state.
+
+For the definition of d-dimensional grid, we would like to define a sequential triadic Chu space such that if an event $A$ has started, then event $A$ must finish before any event $B$ can start. It is a restricting such that events are executed sequential.
+
+\begin{definition}
+   A trivial triadic Chu space over a set K is a triple $K^{1}=(E^{1}, Y, g)$, as in the definition of chu spaces, where $E^{1}$ is the set with a single event $(|E^{1}| = 1)$.
+\end{definition}
+
+A trivial triadic Chu space in itself will be sequential since we are considering only a single event. From the process algebra provided in [2], we can sequentially compose Chu spaces. In our case we would like to compose a trivial triadic Chu space A and B
+such that we can define a sequential triadic Chu space.
+
+\begin{definition}
+    A sequential triadic Chu space is a sequence of trivial triadic Chu spaces such that $K^{n}=K^{1}_{1}...K^{1}_{n}, n \in \mathbb{N}$.
+\end{definition}
+
+%%% Trivial?
+%\begin{lemma}
+%    Any sequential triadic Chu space $K^{n}$ is sequential iff all trivial triadic Chu spaces $K^{1}_{i}, 1 \le i \le n, n \in \mathbb{N}$, are sequential.
+%\end{lemma}
+
+Now we can finally define a d-dimensional grid by the use of sequential triadic Chu space.
+
+\begin{definition}
+    A d-dimensional grid is a $K^{n}_{1} \times ... \times K^{m}_{d}, n,m,d \in \mathbb{N}$ sequential triadic Chu spaces.
+\end{definition}
+
+\begin{theorem}
+    Any d-dimensional grid is a sculpture.
+\end{theorem}
+
+(Proof by structural induction)\\
+
+
+%Christopher has today been able to convince me of the following:
+%
+%1. The 3x2-2d-grid is, in fact, a sculpture (in the old sense); hence my
+%"proof" in the note is wrong!
+%
+%2. The "broken box" is, in fact, not a sculpture.  This confirms the proof I
+%gave in Oslo (of which I had grown unsure).
+%
+%3. His method can be extended to show that the kx2-2d-grid is a
+%(k+2-dimensional) sculpture.
+%
+%4. Using a new idea, he could show that the general kxl-2d-grid is a
+%k+l-dimensional sculpture; hence all 2d-grids are sculptures.  (This also
+%implies that all 2d-nsculptures are sculptures, so in two dimensions there
+%is no difference between old and new sculptures.)
+
+%Afterwards we could extend Christopher's new idea to higher dimensions, so
+
+%5. we think we have an inductive proof that any d-dimensional grid is a
+%sculpture!  To be precise, we think that
+
+ %       any k_1 x ... x k_d d-grid is a k_1+...+k_d-dimensional sculpture.
+
+%If this is true (which it isn't until Christopher has written up the proof
+%:) ), then there is indeed no difference between nsculptures and sculptures:
+%any nsculpture is a sculpture.
+
+
+\noindent [1] V.R. Pratt, Chu Spaces and their Interpretation as Concurrent Objects\\
+\noindent [2] V.R. Pratt, Event-State Duality: The Enriched Case.
+
+
+\end{document}

@@ -1,0 +1,60 @@
+%%% for draft only
+
+%%%%%%%%%%%%%%% system stuff
+\usepackage{mparhack}
+\RequirePackage{ragged2e,ifthen,xspace}
+\newcommand{\short@comment@nosurd}[2]{%
+  \marginpar{%
+    \raisebox{.8\baselineskip}{\rule{.95\marginparwidth}{1pt}}\\
+    \raisebox{.9\baselineskip}[0pt][0pt]{\parbox[t]{.95\marginparwidth}{%
+        \small\sffamily%
+        % \ifthenelse{\isodd{\thepage}}{\RaggedLeft}{\RaggedRight}%
+        \RaggedRight%
+        {\bfseries #1} #2}}}}
+\newcommand{\short@comment}[2]{%
+  \makebox[0pt][c]{\raisebox{.4\baselineskip}[0pt][0pt]{%
+      % \small$\surd$%
+      \textcolor{red}{\normalfont\bfseries$\bullet$}%
+      }}\xspace%
+  \short@comment@nosurd{#1}{#2}}
+\newlength\old@parindent\setlength\old@parindent\parindent
+\newcommand\long@comment[2]{%
+  \bigskip\noindent\hspace*{.1\linewidth}%
+  \short@comment@nosurd{}{Long comment here}%
+  \begin{minipage}[t]{.9\linewidth} 
+    \parindent \old@parindent \parskip 0pt
+    \makebox[0pt][r]{\textcolor{red}{\textbf{#1}}\quad}#2
+  \end{minipage}
+  \bigskip\parindent \old@parindent}
+
+%\addtolength{\oddsidemargin}{-40pt}
+%\addtolength{\evensidemargin}{40pt}
+%\addtolength{\marginparwidth}{30pt}
+
+%%%%%%%%%%%%%%%%%%%% user commands
+%
+%% bullshit boundary :-)
+\newcommand{\bbb}{%
+  \par\bigskip\bigskip%
+  \noindent\makebox[0pt][r]{\textbf{!!!}}\dotfill\makebox[0pt][l]{\textbf{!!!}}%
+  \par\medskip
+  % \newpage
+}
+
+%%%%%%%%%%%%%%%%%%%% user commands
+
+%% The below gives you two commands for inserting comments in the text:
+%% Assuming you are called `fisk', you would have a command
+%% \fisk for inserting a (preferably short) comment in the margin,
+%% with a marker in the text where the comment was placed, but not
+%% otherwise affecting the text,
+%% and a command \fisklong for inserting a longer comment in the text
+%% body, with a marker in the margin.
+\newcommand\rev[1]{\short@comment{Reviewer:}{#1}}
+\newcommand\revlong[1]{\long@comment{Reviewer:}{#1}}
+\newcommand\uli[1]{\short@comment{Uli:}{#1}}
+\newcommand\ulilong[1]{\long@comment{Uli:}{#1}}
+\newcommand\cj[1]{\short@comment{CJ:}{#1}}
+\newcommand\cjlong[1]{\long@comment{CJ:}{#1}}
+\newcommand\ct[1]{\short@comment{CT:}{#1}}
+\newcommand\ctlong[1]{\long@comment{CT:}{#1}}

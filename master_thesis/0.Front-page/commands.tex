@@ -1,0 +1,43 @@
+%   Text coloring commands
+
+%   include own packages
+\usepackage{amssymb, amsfonts, amsmath, amsthm}
+\usepackage{float}
+\usepackage[font=footnotesize, labelfont=bf, justification=justified, format=plain]{caption} % 'format=plain' avoids hanging indentation
+
+%   Own commands
+\usepackage{mydraft}
+\usepackage{mysty}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+  
+%\theoremstyle{definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\setlist[itemize]{topsep=0pt}
+
+\captionsetup[table]{labelsep=space}
+\captionsetup[figure]{labelsep=space}
+
+% Category theory notation
+%\newcommand{\cat}{%
+%\mathbf%
+%}
+%\newcommand{\domain}[1]{%
+%    mathrm{dom}(#1)%
+%}
+%\newcommand{\codomain}[1]{%
+%    \mathrm{cod}(#1)%
+%}
+%\newcommand{\idarrow}[1][]{%
+%    \mathbf{1}_{#1}%
+%}

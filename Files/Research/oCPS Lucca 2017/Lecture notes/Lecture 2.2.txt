@@ -1,0 +1,89 @@
+#### Abstraction ####
+Recent developments in computer and communication technologies are leading to an increasingly networked and wireless world. In the context of networked control systems and cyber-physical systems this raises new challenging questions, especially when the computation, communication and energy resources of the system are limited. To efficiently use the available resources it is desirable to limit the control actions to instances when the system really needs attention. Unfortunately, the classical time-triggered control paradigm is based on performing sensing and actuation actions periodically in time (irrespective of the state of the system) rather than when the system needs attention. Therefore, it is of interest to consider aperiodic control strategies such as event-triggered control as an alternative paradigm, as it seems much more natural to trigger control actions by well-designed events involving the systemâ€™s state, output or other available information, i.e., bringing feedback in the sensing and actuation processes. In this lecture, we discuss the basics and challenges of resource-aware control focusing on  event-triggered control, but also touching upon self-triggered control schemes. Main results regarding control-related properties such as stability, performance and robustness are provided, next to guarantees on the existence of a positive lower bound on the inter-event/transmission times (minimal inter-event times).  Clearly, the latter is essential from an implementation point of view and the side of utilization of the computation, communication and energy resources. Comparisons to periodic time-triggered control and various applications including experiments performed on a platoon of vehicles will be presented.
+#####################
+
+Resource-aware control
+
+standard digital control loop - read about this.
+
+time-triggered paradigm vs. event-triggered paradigm
+
+The whole control theory part can be seen as a venn-diagram with computation, control and communication.
+
+Time-triggered does not take into account the systems utilities.
+
+Paradigm shift from Periodic control -> Aperiodic control.
+
+	Basic setup state-feedback: ||x(t)-x(tk)||>=o|| x(t)||
+	Hybrid systems
+	Challenges
+	- performance/robustness wrt. disturbances & Zeno-freeness
+	- output-based(& Decentralizied)
+
+
+Linear system
+	x(t) = Ax(t) + Bu(t)
+
+Linear state feedback
+	u(t) = Kx(t), T in R >=0
+
+Ideal loop
+	(t) = (A + BK)x(t)
+
+Lyapunov function V(x) = xTPxs.t.
+
+Crux: Guarantee: ||e(t)||<=pa*||x(t)|| with 0 < p < 1 s.t.
+
+Guarantee for Global Exponential Stability.(Ankherman function).
+
+Pertubatition perspective:
+	x(t) = Ax(t) + BKx(tk) = (A+BK)x(t) + BKe(t)
+
+
+Relative triggering is a nice feature, but not good in practice(yet).
+
+After thought:
+	A lot of the issues with CPS is that there is a silver lining of how to
+	balance the hardware requirements with the actual software requirements.
+	One wants to have a certain guarantee based on software, but it also
+	has to uphold the hardware constraint.
+	If there are unrealstic hardware requirements given by a reasonable
+	software requirement it can make it difficult to realize the actual
+	prediction or method.
+
+
+Event-seperation properties (Global, semi-global, local)
+
+Remark: The notation used for the lectures are mostly mathmatical in nature, but
+		some are a bit confusing since they are used in other parts of the concurrency theory.
+		It might have a different meaning than that known from the topic.
+
+
+state-feedback case:
+output-feedback case:
+
+Cooperative adaptive cruise control
+	Feedback - Feedforward
+	String stability
+
+Event-triggered control schemes
+
+Linear systems
+Discrete-time PWL system
+
+Periodic event-triggered control(PETC)
+Hybrid system analysis
+	- Lifting-based approach
+
+# wifi-communication.
+
+
+
+
+
+
+
+
+
+
+

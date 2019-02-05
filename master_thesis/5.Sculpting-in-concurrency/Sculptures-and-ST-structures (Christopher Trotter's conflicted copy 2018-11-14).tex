@@ -1,0 +1,223 @@
+\section{Sculptures and ST-structures}
+    \label{sec:sculpture-and-st-structure}
+%    \ulilong{Expose the equivalence between sculptures and ST-structures using the $\textsf{ST}_s$ translation}
+
+    We show that sculptures and ST-structures are isomorphic while also respecting the computation steps. This result resolves the open problems noticed in \cite[Section 3.3]{Johansen16STstruct} that there is no adjoint between the two translations given there between ST-structures and higher-dimensional automata. We are using here the same translations, but add more information that is given by the bulk and the embedding of the sculpture, which allows us to obtain a one-to-one mapping between ST-structures and this class of higher-dimensional automata that sculptures form.
+    
+    Through the observation from Section~\ref{sec:Chu-spaces-and-ST-structures}, the results in this Section extend to Chu spaces over \textbf{3} as well. Thus, Chu spaces are not enough to capture the concurrency that general higher-dimensional automata can express.
+
+
+    %\begin{remark}[no adjoint]
+        % One can prove that the two maps \stintoh\ and \hintost\ can be lifted to functors between the categories \categoryST\ and \categoryHDA. Nevertheless, we cannot find a unit to make \stintoh\ the left adjoint of \hintost\ because of the example of the ST-structure of Figure~\ref{fig_ex_asymconflict1}(middle). For this ST-structure there is no way to associate a morphism to its translation through $\hintost\circ\stintoh$, which is the ST-structure from Figure~\ref{fig_ex_asymconflict1}(right). There is also not possible to get the adjunction the other way, because of the example of Figure~\ref{fig_ex_interleaving_triangle}(right) showing unfolding of the triangle \HDA. For this \HDA\ there is no way to associate a morphism to its translation through $\stintoh\circ\hintost$, which is unfolded.
+    %\end{remark}
+    
+    From Section \ref{sec:st-structure-and-hda}, we considered the mapping of $\allST$ into $\allHDA$ which was taken from \cite{Johansen16STstruct}. We showed that for a rooted, connected, and adjacent-closed ST-structure $\ST$ the mapping associates a higher dimensional automaton respecting all precubical identities and is acyclic and non-degenerate. Also, we showed that the order in which the events were picked did not matter.
+     
+    This mapping can be extended to generate a sculpture, in other words, the dimension of the sculpture and the embedding, thus retaining the information about the events from the ST-structure it encodes.
+
+    \begin{definition}[\allST\ to sculptures]
+        \label{def:ST-to-Sculptures} 
+        We define a mapping $\stintosculpture$ that for any ST-structure generates an $\HDA$, as well as a bulk and an embedding, thus a sculpture, as follows.  Consider an $\ST=(E,ST)$, with the events linearly ordered as a list $\evlist{E}$. Then $\stintosculpture(\ST)$ returns the $\HDA$ which
+  
+        \begin{itemize}
+<<<<<<< HEAD
+            \item has cells $\mathcal{Q}=\{q^{(\mathcal{S},\mathcal{T})}\in \mathcal{Q}_{n} \mid (\mathcal{S},\mathcal{T})\in ST \mbox{ and } \num(\mathcal{S} \setminus \mathcal{T})=n\}$;
+=======
+            \item has cells $\mathcal{Q}=\{q^{(\mathcal{S},\mathcal{T})}\in \mathcal{Q}_{n} \mid (\mathcal{S},\mathcal{T})\in ST \mbox{ and } \num{(\mathcal{S} \setminus \mathcal{T})}=n\}$;
+>>>>>>> 6a85ddbdff57f2fe030ed38810e4ef49c2b1c3cd
+            \item for any two cells $q^{(\mathcal{S},\mathcal{T})}$ and $q^{(\mathcal{S} \setminus e,\mathcal{T})}$ add the map entry $s_{i}(q^{(\mathcal{S},\mathcal{T})})=q^{(\mathcal{S} \setminus e,\mathcal{T})}$ where $i$ is the index of the event $e$ in the listing $\evlist{E}\!\!\downarrow_{(\mathcal{S} \setminus \mathcal{T})}$;
+            \item for any two cells $q^{(\mathcal{S},\mathcal{T})}$ and $q^{(\mathcal{S},\mathcal{T} \cup e)}$ add the map entry $t_{i}(q^{(\mathcal{S},\mathcal{T})})=q^{(\mathcal{S},\mathcal{T} \cup e)}$ where $i$ is the index of the event $e$ in the listing $\evlist{E}\!\!\downarrow_{(\mathcal{S} \setminus \mathcal{T})}$.
+        \end{itemize}
+        
+        $\evlist{E}\!\!\downarrow_{(\mathcal{S} \setminus \mathcal{T})}$ is the listing $\evlist{E}$ restricted to the set $\mathcal{S} \setminus \mathcal{T}$.
+    
+        %   By $\evlist{E}\!\!\downarrow_{(S\setminus T)}$ we represent the listing of the events in $S\setminus T$, that is, a list of dimension $|S\setminus T|$ obtained from the original listing $\evlist{E}$ by removing all other events. This new listing has the events of $S\setminus T$ in the same original order but with new indexes attached (ranging from $1$ to $|S\setminus T|$).
+ 
+<<<<<<< HEAD
+        Build the bulk $\bulk{n}$, with $n=\num(E)$, as in Lemma~\ref{lemma:chu-labelling-bulk} using the canonical naming on the same listing of the events $\evlist{E}$ as used to generate the above $\HDA$.  The embedding $\embedMorphism:\stintosculpture(\ST)\hookrightarrow \bulk{n}$ is defined as $\embedMorphism(q^{(\mathcal{S},\mathcal{T})})=\stintochu(\mathcal{S},\mathcal{T})$ returning the Chu-labelling as in Proposition~\ref{prop:ST-structure-Chu-over-3} on the same listing of events $\evlist{E}$.
+=======
+        Build the bulk $\bulk{n}$, with $n=\num{(E)}$, as in Lemma~\ref{lemma:chu-labelling-bulk} using the canonical naming on the same listing of the events $\evlist{E}$ as used to generate the above $\HDA$.  The embedding $\embedMorphism:\stintosculpture(\ST)\hookrightarrow \bulk{n}$ is defined as $\embedMorphism(q^{(\mathcal{S},\mathcal{T})})=\stintochu(\mathcal{S},\mathcal{T})$ returning the Chu-labelling as in Proposition~\ref{prop:ST-structure-Chu-over-3} on the same listing of events $\evlist{E}$.
+>>>>>>> 6a85ddbdff57f2fe030ed38810e4ef49c2b1c3cd
+    \end{definition}
+    
+    The mapping $\stintosculpture$ translates a rooted, connected, and adjacent-closed\cj{We need this in order to have proper precubical sets; otherwise we are in the world of partial HDAs.} ST-structure $\ST$ into a higher dimensional automaton, i.e., respecting all cubical laws. Moreover, it is immaterial which listing of the events is picked in the definition (these results are direct adaptations of results from \cite{Johansen16STstruct}). This mapping preserves isomorphism of ST-structures, and moreover, it does not collapse non-isomorphic ST-structures.
+
+    \begin{proposition}
+        \label{prop:ST-to-Sculpture}
+<<<<<<< HEAD
+        The mapping $\stintosculpture$ from Definition~\ref{def:ST-to-Sculptures} does not collapse non-isomorphic ST-structures, in other words, for $\ST\not\isomorphic\ST'$ then $\stintosculpture(\ST)\not\isomorphic\stintosculpture(\ST')$ in the sense of Definition~\ref{def:sculptures}.
+    \end{proposition}
+
+    \begin{proof}
+        We prove the contrapositive, specifically, if $\stintosculpture(\ST)\isomorphic\stintosculpture(\ST')$ then $\ST\isomorphic\ST'$. We show the existence of an isomorphism over the ST-structures, knowing the isomorphism over their translations as sculptures, making use of a fixed listing of events that the map $\stintosculpture$ work with, the same listing for both translations, since we know the translation can choose any listing. The rest is tedious details.
+=======
+         For ST-structures $\ST$ and $\ST'$, $\ST\isomorphic \ST'$ iff\/ $\stintosculpture(\ST)\isomorphic\stintosculpture(\ST')$
+    \end{proposition}
+
+    \begin{proof}
+         It is clear that $\ST\isomorphic \ST'$ implies $\stintosculpture(\ST)\isomorphic\stintosculpture(\ST')$.  We now show that $\stintosculpture(\ST)\isomorphic\stintosculpture(\ST')$ implies $\ST\isomorphic\ST'$. We show the existence of an isomorphism over the ST-structures, knowing the isomorphism over their translations as sculptures, making use of a fixed listing of events that the map \stintosculpture\ works with, the same listing for both translations, since we know the translation can choose any listing.
+        % The rest is tedious details.
+
+        Since the two sculptures $\stintosculpture(\ST)\isomorphic\stintosculpture(\ST')$ are isomorphic it means that the $\HDA$s are embedded in the same bulk, which means we are working with the same set of events $E=E'$ generated by \stintosculpture, modulo a reordering of their listing, which is captured by the second map $b$ between the bulks. We know that $b$ is a bijection on the cells of the bulks, and thus, through the canonical naming scheme, $b$ induces a bijection on $E$ which we call $g$ defined by $g(e_{i})=e'_{i}$ where the index $i$ is important (i.e., $g$ associates the event on position $i$ in the listing $\evlist{E}$ with the event on the same position in the listing $\evlist{E'}$). We use $g$ as the isomorphism that we are looking for between the two ST-structures. 
+>>>>>>> 6a85ddbdff57f2fe030ed38810e4ef49c2b1c3cd
+
+        We need to show that $g$ preserves configurations, i.e., for some $(\mathcal{S},\mathcal{T})\in\ST$ we prove that $g(\mathcal{S},\mathcal{T}) \in \ST'$. We make use of the commuting square property of the sculpture morphisms. For the ST-configuration there exists the corresponding cell $q^{(\mathcal{S}, \mathcal{T})}$ generated by the \stintosculpture, which in turn is embedded in the bulk as $\stintochu(\mathcal{S},\mathcal{T})$. At the same time the HDA morphism associates $f(q^{(\mathcal{S},\mathcal{T})})=q^{(\mathcal{S}',\mathcal{T}')}$ to some cell in $\stintosculpture(\ST')$ which in turn comes from some ST-configuration $(\mathcal{S}',\mathcal{T}')$. This cell is embedded into the bulk as $\stintochu(\mathcal{S}',\mathcal{T}')$ which is equated to $\stintochu(\mathcal{S},\mathcal{T})=b(\stintochu(\mathcal{S},\mathcal{T}))$ by the bulk isomorphism, meaning that respective events in the two listings receive the same values. Now, going through the translation between Chu states and ST-configurations we can see how $g(\mathcal{S},\mathcal{T})=(g(\mathcal{S}),g(\mathcal{T}))=(\mathcal{S}',\mathcal{T}')\in\ST'$.
+
+        \begin{itemize}
+            \item If $e_{i} \not\in \mathcal{S}$ then $\stintochu(\mathcal{S},\mathcal{T})(e_{i})=0$, which means that also $g(e_{i})=e'_{i}$ takes the same value in $\stintochu(\mathcal{S}',\mathcal{T}')(g(e_{i}))=0$. This means that $g(e_{i})\not\in \mathcal{S}'=g(\mathcal{S})$ because of injectivity.
+            \item If $e_{i}\in \mathcal{S}$ and $e_{i} \not\in \mathcal{T}$ then $\stintochu(\mathcal{S},\mathcal{T})(e_{i})=\executing$, which means that also $g(e_{i})=e'_{i}$ takes the same value in $\stintochu(\mathcal{S}',\mathcal{T}')(g(e_{i}))=\executing$. This means that $g(e_{i})\in g(\mathcal{S})$ and $g(e_{i}) \not\in g(\mathcal{T})$ because of injectivity on $\mathcal{S}$.
+            \item If $e_{i}\in \mathcal{T} \subseteq \mathcal{S}$ then $\stintochu(\mathcal{S},\mathcal{T})(e_{i})=1$ which means that also $g(e_{i})=e'_{i}$ takes the same value in $\stintochu(\mathcal{S}',\mathcal{T}')(g(e_{i}))=1$. This means that $g(e_{i}) \in g(\mathcal{T}) \subseteq g(\mathcal{S})$.
+        \end{itemize}
+    
+        This proves that $(g(\mathcal{S}),g(\mathcal{T}))\in\ST'$.
+    
+    \end{proof}
+
+    \begin{definition}[Sculptures to $\allST$]
+        \label{def:sculptures-to-ST}
+<<<<<<< HEAD
+        Define a mapping $\sculpintost$ only over sculptures, which for a sculpture $\sculpture{\mathcal{H}}{n}=(\mathcal{H},\bulk{n},\embedMorphism)$ associates the ST-structure $\sculpintost(\sculpture{\mathcal{H}}{n})$ as follows.
+
+        Take a linearly ordered set $\evlist{E}$ (of events) of cardinality as the dimension of the bulk $n=\dim\bulk{n}$. The ST-configurations of $\sculpintost(\sculpture{\mathcal{H}}{n})$ are obtained from the cells of $H$ as $ST_{s}=\{\sculpintost(q) \mid q\in \mathcal{H}\}$.
+=======
+        Define a mapping $\sculpintost$, which for a sculpture $\sculpture{\mathcal{H}}{n}=(\mathcal{H},\bulk{n},\embedMorphism)$ associates the ST-structure $\sculpintost(\sculpture{\mathcal{H}}{n})$ as follows. Take a linearly ordered set $\evlist{E}$ (of events) of cardinality as the dimension of the bulk $n=\dim\bulk{n}$. The ST-configurations of $\sculpintost(\sculpture{\mathcal{H}}{n})$ are obtained from the cells of $H$ as $\sts=\{\chuintost(\embedMorphism(q)) \mid q\in \mathcal{H}\}$..
+>>>>>>> 6a85ddbdff57f2fe030ed38810e4ef49c2b1c3cd
+
+        % One ST-configuration $\sculpintost(q)$ is obtained as $\sculpintost(q)=(\mathcal{S},\mathcal{T})=\alphachain{k}(E,\emptyset)$ for $\alphachain{k}(q_{n})=\embedMorphism(q)$. We abuse the notation in $\alphachain{k}(E,\emptyset)$ and apply an $\alpha$-chain to ST-configurations, w.r.t.\ the predefined listing $E$, which is defined as:
+
+        %\alphachain{k}(\mathcal{S},\mathcal{T})=\alphachain{k-1}(\alpha_{i_{k}}(\mathcal{S},\mathcal{T}))$ with 
+        % \[
+            % \alpha_{i_{k}}(\mathcal{S},\mathcal{T})=\begin{cases} (S\setminus e,T), & \mbox{if } \alpha=s\wedge E\!\!\downarrow_{S\setminus\!T}\!\![i_{k}]=e \\ 
+            % (S,T\cup e), & \mbox{if } \alpha=t\wedge E\!\!\downarrow_{S\setminus\!T}\!\![i_{k}]=e \end{cases}
+        % \]
+        % thus returning an ST-configuration.
+ 
+        %One ST-configuration $\sculpintost(q)$ is obtained as $\sculpintost(q)=\chuintost(\embedMorphism(q))$.
+    
+    \end{definition}
+    
+%    \cjlong{I am not sure if the definition with chains is not needed for future proofs.}
+
+    Intuitively, since we have the bulk we can work with the canonical naming based on a fixed listing of events. Using Proposition~\ref{prop:ST-structure-Chu-over-3} we can associate an ST-configuration to each cell of the $\HDA$ by going through the embedding to the corresponding cell in the bulk. It is clear that $\sculpintost(\sculpture{\mathcal{H}}{n})$ is rooted, connected and closed under single events, \ie~regular.
+
+    The following results show a one-to-one correspondence between the ST-structures and sculptures.
+
+    \begin{proposition}
+        \label{prop:ST-to-Sculpture}
+        For an arbitrary ST-structure $\ST$ we have
+        \[
+            \sculpintost(\stintosculpture(\ST))\isomorphic \ST.
+        \]
+    \end{proposition}
+
+    \begin{proof}
+        To prove the isomorphism between the right-hand $\ST=(E,\sts)$ and the left-hand $\sculpintost(\stintosculpture(\ST))$ we need to show that $\exists f: E \parto E'$ such that $f$ preserves ST-configurations.  
+        % and is locally injective and total, 
+        % i.e., for all $( S, T)\in \sts$ we show that $f( S, T):=( f( S), f( T))\in \sts'$, with $\sts'$ the ST-configurations generated on the left-hand side.
+        %  and for all $( S, T)\in \sts$, the restriction $f\rest S$ is injective and total). 
+        We will consider $E'$ to be the events produced by the left-hand side of the isomorphism, precisely, by $\sculpintost(\stintosculpture(\ST))$.
+    
+        The application of the mapping $\stintosculpture$ 
+        % provided in Definition \ref{def_stintosculptures} which 
+<<<<<<< HEAD
+        generates an $\HDA$, as well as a bulk and an embedding, considering the events of $\ST$ to be linearly ordered as a list $\evlist{E}$. $\stintosculpture$ builds cells $Q=\{q^{(\mathcal{S},\mathcal{T})}\in \mathcal{Q}_{n} \mid (\mathcal{S},\mathcal{T})\in\sts \mbox{ and } \num(\mathcal{S} \setminus \mathcal{T})=n\}$ and the embedding $\embedMorphism(q^{(\mathcal{S},\mathcal{T})})=\stintochu(\mathcal{S},\mathcal{T})$ into the bulk $\bulk{\num E}$; thus the sculpture $\sculpture{\mathcal{H}}{n}=(\mathcal{Q}, \bulk{\num E}, \embedMorphism(q^{(\mathcal{S},\mathcal{T})}))$. The embedding $\embedMorphism$ returns for each cell $q^{(\mathcal{S}, \mathcal{T})}$ the Chu-labelling as in Proposition~\ref{prop:ST-structure-Chu-over-3} on the same listing of events $\evlist{E}$.
+=======
+        generates an $\HDA$, as well as a bulk and an embedding, considering the events of $\ST$ to be linearly ordered as a list $\evlist{E}$. $\stintosculpture$ builds cells $\mathcal{Q}=\{q^{(\mathcal{S},\mathcal{T})}\in \mathcal{Q}_{n} \mid (\mathcal{S},\mathcal{T})\in\sts \mbox{ and } \num{(\mathcal{S} \setminus \mathcal{T})}=n\}$ and the embedding $\embedMorphism(q^{(\mathcal{S},\mathcal{T})})=\stintochu(\mathcal{S},\mathcal{T})$ into the bulk $\bulk{\num E}$; thus the sculpture $\sculpture{\mathcal{H}}{n}=(\mathcal{Q}, \bulk{\num E}, \embedMorphism(q^{(\mathcal{S},\mathcal{T})}))$. The embedding $\embedMorphism$ returns for each cell $q^{(\mathcal{S}, \mathcal{T})}$ the Chu-labelling as in Proposition~\ref{prop:ST-structure-Chu-over-3} on the same listing of events $\evlist{E}$.
+>>>>>>> 6a85ddbdff57f2fe030ed38810e4ef49c2b1c3cd
+   
+        Thus, the ST-structure produced on the left-hand side by $\sculpintost$ applied to the above sculpture $\sculpture{\mathcal{H}}{s}(\ST)=\sculpture{\mathcal{H}}{n}$ assumes wlog.\  to have the same listing of events $\evlist{E}$ as before.
+        % , i.e., as produced by \sculpintost\ according to Definition~\ref{def_sculptures_to_ST}.
+        % 
+        The ST-configurations of $\sculpintost(\sculpture{\mathcal{H}}{n})$ are obtained from the cells of $\sculpture{\mathcal{H}}{n}$ as $\sts' = \{\chuintost(\embedMorphism(q^{(\mathcal{S},\mathcal{T})})) \mid q^{(\mathcal{S},\mathcal{T})} \in \sculpture{\mathcal{H}}{n}\}$, see Definition \ref{def:sculptures-to-ST}. 
+
+        Since $E'$ is the same set of events $E$, we take the isomorphism map $f: E \rightarrow E$ to be identity function on $E$.
+        %, i.e., $\forall e\in E: f(e)=e$.
+        % We show that the isomorphism properties hold. 
+<<<<<<< HEAD
+        We check that $f$ preserves the ST-configurations; i.e., that $f(\mathcal{S}, \mathcal{T}):=( f(\mathcal{S}), f(\mathcal{T})) = (\mathcal{S}, \mathcal{T}) \in \sts'$. From this it must be that $\exists q^{(\mathcal{S},\mathcal{T})}\in\sculpture{\mathcal{H}}{n}: \chuintost(\embedMorphism(q^{(\mathcal{S},\mathcal{T})}) = (\mathcal{S},\mathcal{T})$ by Definition \ref{def:sculptures-to-ST}. Further, from Definition~\ref{def:ST-to-Sculpturess} we know that $\chuintost(\embedMorphism(q^{(\mathcal{S},\mathcal{T})}) = \chuintost(\stintochu(\mathcal{S},\mathcal{T}))$. Finally, by Proposition \ref{prop:ST-structure-Chu-over-3} we have the expected result $\chuintost(\embedMorphism(q^{(\mathcal{S},\mathcal{T})}) = \chuintost(\stintochu(\mathcal{S},\mathcal{T})) = (\mathcal{S},\mathcal{T})$.
+=======
+        We check that $f$ preserves the ST-configurations; i.e., that $f(\mathcal{S}, \mathcal{T}):=( f(\mathcal{S}), f(\mathcal{T})) = (\mathcal{S}, \mathcal{T}) \in \sts'$. From this it must be that $\exists q^{(\mathcal{S},\mathcal{T})}\in\sculpture{\mathcal{H}}{n}: \chuintost(\embedMorphism(q^{(\mathcal{S},\mathcal{T})}) = (\mathcal{S},\mathcal{T})$ by Definition \ref{def:sculptures-to-ST}. Further, from Definition~\ref{def:ST-to-Sculptures} we know that $\chuintost(\embedMorphism(q^{(\mathcal{S},\mathcal{T})}) = \chuintost(\stintochu(\mathcal{S},\mathcal{T}))$. Finally, by Proposition \ref{prop:ST-structure-Chu-over-3} we have the expected result $\chuintost(\embedMorphism(q^{(\mathcal{S},\mathcal{T})}) = \chuintost(\stintochu(\mathcal{S},\mathcal{T})) = (\mathcal{S},\mathcal{T})$.
+>>>>>>> 6a85ddbdff57f2fe030ed38810e4ef49c2b1c3cd
+
+        It is easy to see that $f$, as identity function, is locally injective and total.
+    \end{proof}
+
+    \begin{proposition}
+        \label{prop:Sculpture-to-ST}
+<<<<<<< HEAD
+    For a sculpture $\sculpture{\mathcal{H}}{n}=(\mathcal{H},\bulk{n},\embedMorphism)$ we have
+        \[
+        \stintosculpture(\sculpintost(\sculpture{\mathcal{H}}{n})) \isomorphic \sculpture{\mathcal{H}}{n}.
+        \]
+    \end{proposition}
+
+    \begin{proof}
+        To prove the isomorphism between the right-hand $\mathcal{H}^{n}=(\mathcal{H},B^{n}, em)$ and the left-hand $\stintosculpture(\sculpintost(\mathcal{H}^{n}))$ we need to show that $\exists f: \mathcal{X} \rightarrow \mathcal{X}'$ and $\exists b:B^{n} \rightarrow B^{n}$ such that $f,b$ are bijective and the square commutes, that is, $b \circ em = em' \circ f$.
+    
+        \begin{equation*}
+            \xymatrix{%
+            \mathcal{X} \ar[d]_{\embedMorphism} \ar[r]_f & \mathcal{X}' \ar[d]^{\embedMorphism'}
+=======
+    For any sculpture $\sculpture{\mathcal{H}}{n}=(\mathcal{H},\bulk{n},\embedMorphism)$, $\stintosculpture(\sculpintost(\sculpture{\mathcal{H}}{n})) \isomorphic \sculpture{\mathcal{H}}{n}.$
+    \end{proposition}
+
+    \begin{proof}
+        To prove the isomorphism between the right-hand $\mathcal{H}^{n}=(\mathcal{H},B^{n}, em)$ and the left-hand $\stintosculpture(\sculpintost(\mathcal{H}^{n}))$ we need to show that $\exists f: \mathcal{H} \rightarrow \mathcal{H}'$ and $\exists b:B^{n} \rightarrow B^{n}$ such that $f,b$ are bijective and the square commutes, namely, $b \circ em = em' \circ f$.
+    
+        \begin{equation*}
+            \xymatrix{%
+            \mathcal{H} \ar[d]_{\embedMorphism} \ar[r]_f & \mathcal{H}' \ar[d]^{\embedMorphism'}
+>>>>>>> 6a85ddbdff57f2fe030ed38810e4ef49c2b1c3cd
+            \\ \bulk{n} \ar[r]^b & \bulk{n'}
+            }
+        \end{equation*}
+
+<<<<<<< HEAD
+        First, we consider the mapping $\sculpintost$ provided in Definition \ref{def:sculptures-to-ST} which generates an $ST$ for a sculpture, as follows. Take a linearly ordered set $\evlist{E}$ (of events) of cardinality as the dimension of the bulk, that is, $|E| = n = \dim \bulk{n}.$ The ST-configurations of $\sculpintost(\mathcal{H}^{n})$ are obtained from the cells of $\mathcal{H}$, namely, $\forall q \in \mathcal{H} :\sculpintost(q)=STChu(\embedMorphism(q))=(\mathcal{S},\mathcal{T})^{q}$. This is the ST-structure produced on the left-hand side by $\sculpintost$ applied to the sculpture $\mathcal{H}^{n}$. 
+
+        We will now consider the mapping $\stintosculpture$ provided in Definition \ref{def:ST-to-Sculptures} which generates an higher-dimensional automaton for any ST-structure, as well as a bulk and an embedding, thus a sculpture, as follows. $\stintosculpture$ requires the events of the ST-structure to be linearly ordered; we take the same order produced above by $\sculpintost$.
+=======
+        First, we consider the mapping $\sculpintost$ provided in Definition \ref{def:sculptures-to-ST} which generates an $ST$ for a sculpture, as follows. Take a linearly ordered set $\evlist{E}$ (of events) of cardinality as the dimension of the bulk, that is, $|E| = n = \dim \bulk{n}.$ The ST-configurations of $\sculpintost(\mathcal{H}^{n})$ are obtained from the cells of $\mathcal{H}$, such that $\forall q \in \mathcal{H} :\sculpintost(q)=STChu(\embedMorphism(q))=(\mathcal{S},\mathcal{T})^{q}$. This is the ST-structure produced on the left-hand side by $\sculpintost$ applied to the sculpture $\mathcal{H}^{n}$. 
+
+        We will now consider the mapping $\stintosculpture$ provided in Definition \ref{def:ST-to-Sculptures} which generates an $\HDA$ for any ST-structure, as well as a bulk and an embedding, thus a sculpture, as follows. $\stintosculpture$ requires the events of the ST-structure to be linearly ordered; we take the same order produced above by $\sculpintost$.
+>>>>>>> 6a85ddbdff57f2fe030ed38810e4ef49c2b1c3cd
+    
+        \begin{enumerate}
+            \item Build the bulk $B^{n'}$, with $n'=\num E=n$, as in Lemma \ref{lemma:chu-labelling-bulk} using the canonical naming on the listing of the events $\evlist{E}$. This is thus the same bulk $\bulk{n}$ from $\mathcal{H}^{n}$. Thus we can take the $b$ part of the sculptures morphism to be the identity function which is thus a morphism between \HDA. This is also a bijection.
+        
+<<<<<<< HEAD
+            \item The HDA $\stintosculpture(\sculpintost(\mathcal{H}^{n}))$ has cells $\mathcal{Q}=\{p^{(\mathcal{S},\mathcal{T})} \in \mathcal{Q}_{n} \mid (\mathcal{S},\mathcal{T}) \in \sculpintost(\mathcal{H}^{n})$ and $\num(\mathcal{S} \setminus \mathcal{T})=n\}$. Since each ST-configuration corresponds to some $q \in \mathcal{H}^{n}$ we thus construct one cell $p^{(\mathcal{S},\mathcal{T})^{q}}$ for each cell $q$; which according to Definition~\ref{def:sculptures-to-ST} is built using the embedding, in other words, $p^{(\mathcal{S}, \mathcal{T})^{q}} = p^{\chuintost(\embedMorphism(q))}$.
+            
+            \item The embedding $\embedMorphism':\stintosculpture(\sculpintost(\mathcal{H}^{n})) \hookrightarrow B^{n'}$ is defined as $\embedMorphism'(p^{(\mathcal{S},\mathcal{T})}) = Chu(\mathcal{S},\mathcal{T})$ returning the Chu-labelling as in Proposition \ref{prop:ST-structure-Chu-over-3} on the same listing of events $\evlist{E}$.
+            
+            We thus take $f: \mathcal{H} \rightarrow \stintosculpture(\sculpintost(\sculpture{\mathcal{H}}{n}))$ to be defined as $f(q)=p^{\chuintost(\embedMorphism(q))}$ and $f^{-1}(p^{\chuintost(\embedMorphism(q))})=q$; thus obtaining a bijection between the cells of the respective higher-dimensional automata.
+            
+            We show that $f$ is a morphism of higher-dimensional automata. We thus show that $f$ commutes with the face maps, that is, for any $q$ we show $s_{i}(f(q))=f(s_{i}(q))$. We have $s_{i}(f(q)) = s_{i}(p^{\chuintost(\embedMorphism(q))})=s_{i}(p^{(\mathcal{S},\mathcal{T})})$ if we call $\chuintost(\embedMorphism(q))=(\mathcal{S},\mathcal{T})$. Definition \ref{def:ST-to-Sculptures} relates this $i$-th map to a cell made from the ST-configuration $(\mathcal{S} \setminus e,\mathcal{T})$ with $e$ being the $i$-th event in the listing $\evlist{E}\restrictedToSet{\mathcal{S}\setminus \mathcal{T}}$. Since the bulk uses the same listing, we thus have this ST-configuration obtained as $\chuintost(\embedMorphism(s_{i}(q)))$. On the right-hand side of the equality we have the same by definition $f(s_{i}(q))=p^{\chuintost(\embedMorphism(s_{i}(q)))}$.
+=======
+            \item The HDA $\stintosculpture(\sculpintost(\mathcal{H}^{n}))$ has cells $\mathcal{Q}=\{p^{(\mathcal{S},\mathcal{T})} \in \mathcal{Q}_{n} \mid (\mathcal{S},\mathcal{T}) \in \sculpintost(\mathcal{H}^{n})$ and $\num{(\mathcal{S} \setminus \mathcal{T})}=n\}$. Since each ST-configuration corresponds to some $q \in \mathcal{H}^{n}$ we thus construct one cell $p^{(\mathcal{S},\mathcal{T})^{q}}$ for each cell $q$; which according to Definition~\ref{def:sculptures-to-ST} is built using the embedding, in other words, $p^{(\mathcal{S}, \mathcal{T})^{q}} = p^{\chuintost(\embedMorphism(q))}$.
+            
+            \item The embedding $\embedMorphism':\stintosculpture(\sculpintost(\mathcal{H}^{n})) \hookrightarrow B^{n'}$ is defined as $\embedMorphism'(p^{(\mathcal{S},\mathcal{T})}) = Chu(\mathcal{S},\mathcal{T})$ returning the Chu-labelling as in Proposition \ref{prop:ST-structure-Chu-over-3} on the same listing of events $\evlist{E}$.
+            
+            We thus take $f: \mathcal{H} \rightarrow \stintosculpture(\sculpintost(\sculpture{\mathcal{H}}{n}))$ to be defined as $f(q)=p^{\chuintost(\embedMorphism(q))}$ and $f^{-1}(p^{\chuintost(\embedMorphism(q))})=q$; thus obtaining a bijection between the cells of the respective $\HDA$s.
+            
+            We show that $f$ is a morphism of $\HDA$s. We thus show that $f$ commutes with the face maps, that is, for any $q$ we show $s_{i}(f(q))=f(s_{i}(q))$. We have $s_{i}(f(q)) = s_{i}(p^{\chuintost(\embedMorphism(q))})=s_{i}(p^{(\mathcal{S},\mathcal{T})})$ if we call $\chuintost(\embedMorphism(q))=(\mathcal{S},\mathcal{T})$. Definition \ref{def:ST-to-Sculptures} relates this $i$-th map to a cell made from the ST-configuration $(\mathcal{S} \setminus e,\mathcal{T})$ with $e$ being the $i$-th event in the listing $\evlist{E}\restrictedToSet{\mathcal{S}\setminus \mathcal{T}}$. Since the bulk uses the same listing, we thus have this ST-configuration obtained as $\chuintost(\embedMorphism(s_{i}(q)))$. On the right-hand side of the equality we have the same by definition $f(s_{i}(q))=p^{\chuintost(\embedMorphism(s_{i}(q)))}$.
+>>>>>>> 6a85ddbdff57f2fe030ed38810e4ef49c2b1c3cd
+
+            We show that the sculptures morphism square commutes. The fact that $f,b$ are bijections finishes the proof, which proves the isomorphism property. We show that $\embedMorphism(q)=\embedMorphism'(f(q))$ by working with the right-hand side: $\embedMorphism'(f(q))=\embedMorphism'(p^{\chuintost(\embedMorphism(q))})=\stintochu(\chuintost(\embedMorphism(q)))=\embedMorphism(q)$.
+        \end{enumerate}    
+    \end{proof}
+    
+<<<<<<< HEAD
+    We can also understand $\sculpintost$ as labelling every cell of the HDA with an ST-configuration, or equivalently (because of Proposition~\ref{prop:ST-structure-Chu-over-3}) with a Chu-3 state, which in the terminology of Lemma~\ref{lemma:chu-labelling-bulk} we call this a Chu-listing or Chu-label. Corollary~\ref{cor:unqiue-chu-label-in-bulk} says that this labelling is unique. Thus, in sculptures we have a one-to-one correspondence between HDA states, ST-configurations, and Chu-3 states.
+=======
+    We can also understand $\sculpintost$ as labelling every cell of the sculpture with an ST-configuration, or equivalently (because of Proposition~\ref{prop:ST-structure-Chu-over-3}) with a Chu-3 state, which in the terminology of Lemma~\ref{lemma:chu-labelling-bulk} we call this a Chu-listing or Chu-label. Corollary~\ref{cor:unqiue-chu-label-in-bulk} says that this labelling is unique. Thus, in sculptures we have a one-to-one correspondence between HDA states, ST-configurations, and Chu-3 states.
+>>>>>>> 6a85ddbdff57f2fe030ed38810e4ef49c2b1c3cd
+
+    \begin{corollary}\label{cor:unqiue-chu-label-in-bulk}
+        In a bulk every cell has a unique label (either as an ST-configuration or as a Chu-label representation). Thus, there are no two cells of the bulk with the same label.
+    \end{corollary}
+
+    \begin{proof}
+        This is easy to see from the proofs above.
+        % \cj{Do we need more detailed proof here?}
+    \end{proof}

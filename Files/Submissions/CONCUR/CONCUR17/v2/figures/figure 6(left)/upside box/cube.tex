@@ -1,0 +1,226 @@
+\documentclass[tikz,border=10pt]{standalone}
+\begin{document}
+  \begin{tikzpicture}[node distance=3cm, align=center]
+    \title{unfolded HDA}
+
+    %extra
+    %\node(q06x) [above=4cm, right=11.7cm] {$011$};
+    %\node(q18x) [above=7.2cm, right=10.8cm] {$t11$};
+
+    % face 1
+    \node(q01)                  {$000$};
+    \node(q11) [right of=q01]   {$0t0$};
+    \node(q14) [above of=q01]   {$t00$};
+    \node(q03) [right of=q11]   {$010$};
+    \node(q02) [above of=q14]   {$100$};
+    \node(q12) [above of=q03]   {$t10$};
+    \node(q04) [above of=q12]   {$110$};
+    \node(q13) [right of=q02]   {$1t0$};
+    \node(q21) [right of=q14]   {$\circ$};
+    
+    % face 2
+    \node(q08) [above right=4cm] {$001$};
+    \node(q17) [right of=q08] {$0t1$};
+    \node(q16) [above of=q08] {$t01$};
+    \node(q06) [right of=q17] {$011$};
+
+    \node(q07) [above of=q16] {$101$};
+    \node(q18) [above of=q06] {$t11$};
+    \node(q05) [above of=q18] {$111$};
+    \node(q15) [right of=q07] {$1t1$};
+    \node(q22) [right of=q16] {$\circ$};
+
+    %face 3
+    \node(q110) [above right of=q04] {$11t$};
+    \node(q19) [above right of=q03] {$01t$};
+    \node(q23) [above right of=q12] {$\circ$};
+
+    %face 4
+    \node(q111) [above right of=q01] {$00t$};
+    \node(q112) [above right of=q02] {$10t$};
+    \node(q24) [above right of=q14] {$\circ$};
+
+    %face 5
+    \node(q25) [right of=q112] {$\circ$};
+
+    %face 6
+    \node(q26) [right of=q111] {$\times$};
+
+
+    %3D
+    %\node(q31) [above right=4.8cm] {$q^{1}_{3}$};
+
+
+    %\draw [->][draw=black, thick] (q18x) to node [below] {} (q06x);
+    %\draw [->][draw=black, thick] (q18x) to node [left] {} (q05);
+    %\draw [->][draw=blue!50, thick] (q22) to node [left] {} (q18x);
+    %\draw [->][draw=green, thick] (q23) to node [left] {} (q18x);
+
+
+    %%%%% Edges Figure 1 %%%%%
+    %face 1(1D)
+    \draw [->][draw=blue!50, thick] (q11) to node [below] {} (q01);
+    \draw [->][draw=black, thick] (q14) to node [left] {} (q01);
+    \draw [->][draw=blue!50, thick] (q11) to node [below] {} (q03);
+    \draw [->][draw=black, thick] (q14) to node [left] {} (q02);
+    \draw [->][draw=black, thick] (q12) to node [right] {} (q03);
+    \draw [->][draw=black, thick] (q12) to node [right] {} (q04);
+    \draw [->][draw=blue!50, thick] (q13) to node [above] {} (q02);
+    \draw [->][draw=blue!50, thick] (q13) to node [above] {} (q04);
+
+    %(2D)
+    %\draw [->][draw=blue!50, thick] (q21) to node [below] {} (q14);
+    %\draw [->][draw=black, thick] (q21) to node [left] {} (q11);
+    %\draw [->][draw=blue!50, thick] (q21) to node [below] {} (q12);
+    %\draw [->][draw=black, thick] (q21) to node [left] {} (q13);
+
+    %face 2(1D)
+    \draw [->][draw=blue!50, thick] (q17) to node [below] {} (q08);
+    \draw [->][draw=black, thick] (q16) to node [left] {} (q08);
+    \draw [->][draw=blue!50, thick] (q17) to node [below] {} (q06);
+    \draw [->][draw=black, thick] (q16) to node [left] {} (q07);
+    \draw [->][draw=black, thick] (q18) to node [right] {} (q06);
+    \draw [->][draw=black, thick] (q18) to node [right] {} (q05);
+    \draw [->][draw=blue!50, thick] (q15) to node [above] {} (q07);
+    \draw [->][draw=blue!50, thick] (q15) to node [above] {} (q05);    
+
+    %(2D)
+    %\draw [->][draw=blue!50, thick] (q22) to node [below] {} (q16);
+    %\draw [->][draw=black, thick] (q22) to node [left] {} (q17);
+    %\draw [->][draw=black, thick] (q22) to node [left] {} (q15);
+    %\draw [->][draw=blue!50, thick] (q22) to node [below] {} (q18);
+
+    %face 3(1D)
+    \draw [->][draw=green, thick] (q110) to node [right] {} (q04);
+    \draw [->][draw=green, thick] (q110) to node [right] {} (q05);
+    \draw [->][draw=green, thick] (q19) to node [above] {} (q03);
+    \draw [->][draw=green, thick] (q19) to node [above] {} (q06);    
+
+    %(2D)
+    %\draw [->][draw=green, thick] (q23) to node [below right] {} (q12);
+    %\draw [->][draw=black, thick] (q23) to node [left] {} (q19);
+    %\draw [->][draw=black, thick] (q23) to node [left] {} (q110);
+    %\draw [->][draw=green, thick] (q23) to node [below right] {} (q18);    
+
+    %face 4(1D)
+    \draw [->][draw=green, thick] (q112) to node [right] {} (q02);
+    \draw [->][draw=green, thick] (q112) to node [right] {} (q07);
+    \draw [->][draw=green, thick] (q111) to node [above] {} (q01);
+    \draw [->][draw=green, thick] (q111) to node [above] {} (q08);    
+
+    %(2D)
+    %\draw [->][draw=green, thick] (q24) to node [below right] {} (q14);
+    %\draw [->][draw=black, thick] (q24) to node [left] {} (q111);
+    %\draw [->][draw=black, thick] (q24) to node [left] {} (q112);
+    %\draw [->][draw=green, thick] (q24) to node [below right] {} (q16);
+
+    %face 5(2D)
+    %\draw [->][draw=blue!50, thick] (q25) to node [below right] {} (q112);
+    %\draw [->][draw=green, thick] (q25) to node [left] {} (q13);
+    %\draw [->][draw=blue!50, thick] (q25) to node [left] {} (q110);
+    %\draw [->][draw=green, thick] (q25) to node [below right] {} (q15);
+
+
+    %face 6(2D)
+    %\draw [->][draw=blue!50, thick] (q26) to node [below right] {} (q111);
+    %\draw [->][draw=green, thick] (q26) to node [left] {} (q11);
+    %\draw [->][draw=green, thick] (q26) to node [left] {} (q17);
+    %\draw [->][draw=blue!50, thick] (q26) to node [below right] {} (q19);
+
+    %3D
+    %\draw [->][draw=green, thick] (q31) to node [below right] {} (q21);
+    %\draw [->][draw=green, thick] (q31) to node [left] {} (q22);
+    %\draw [->][draw=blue!50, thick] (q31) to node [left] {} (q23);
+    %\draw [->][draw=blue!50, thick] (q31) to node [left] {} (q24);
+    %\draw [->][draw=black, thick] (q31) to node [left] {} (q25);
+    %\draw [->][draw=black, thick] (q31) to node [below right] {} (q26);
+
+    %face 1
+    %\draw [->][draw=black, thick] (q11) to node [below] {$s_{1}$} (q01);
+    %\draw [->][draw=black, thick] (q14) to node [left] {$s_{1}$} (q01);
+    %\draw [->][draw=black, thick] (q11) to node [below] {$t_{1}$} (q03);
+    %\draw [->][draw=black, thick] (q14) to node [left] {$t_{1}$} (q02);
+    %\draw [->][draw=black, thick] (q12) to node [right] {$s_{1}$} (q03);
+    %\draw [->][draw=black, thick] (q12) to node [right] {$t_{1}$} (q04);
+    %\draw [->][draw=black, thick] (q13) to node [above] {$s_{1}$} (q02);
+    %\draw [->][draw=black, thick] (q13) to node [above] {$t_{1}$} (q04);
+
+    %face 1
+    %\draw [->][draw=green, thick] (q21) to node [below] {$s_{2}$} (q14);
+    %\draw [->][draw=green, thick] (q21) to node [left] {$s_{2}$} (q11);
+    %\draw [->][draw=green, thick] (q21) to node [below] {$t_{2}$} (q12);
+    %\draw [->][draw=green, thick] (q21) to node [left] {$t_{2}$} (q13);
+
+    %face 2
+    %\draw [->][draw=black, thick] (q17) to node [below] {$s_{1}$} (q08);
+    %\draw [->][draw=black, thick] (q16) to node [left] {$s_{1}$} (q08);
+    %\draw [->][draw=black, thick] (q17) to node [below] {$t_{1}$} (q06);
+    %\draw [->][draw=black, thick] (q16) to node [left] {$t_{1}$} (q07);
+    %\draw [->][draw=black, thick] (q18) to node [right] {$s_{1}$} (q06);
+    %\draw [->][draw=black, thick] (q18) to node [right] {$t_{1}$} (q05);
+    %\draw [->][draw=black, thick] (q15) to node [above] {$s_{1}$} (q07);
+    %\draw [->][draw=black, thick] (q15) to node [above] {$t_{1}$} (q05);    
+
+    %\draw [->][draw=green, thick] (q22) to node [below] {$s_{2}$} (q16);
+    %\draw [->][draw=green, thick] (q22) to node [left] {$s_{2}$} (q17);
+    %\draw [->][draw=green, thick] (q22) to node [left] {$t_{2}$} (q15);
+    %\draw [->][draw=green, thick] (q22) to node [below] {$t_{2}$} (q18);
+
+    %face 3
+    %\draw [->][draw=black, thick] (q110) to node [right] {$s_{1}$} (q04);
+    %\draw [->][draw=black, thick] (q18) to node [right] {$t_{1}$} (q05);
+    %\draw [->][draw=black, thick] (q15) to node [above] {$s_{1}$} (q07);
+    %\draw [->][draw=black, thick] (q15) to node [above] {$t_{1}$} (q05);    
+
+    %\draw [->][draw=green, thick] (q23) to node [below right] {$s_{2}$} (q12);
+    %\draw [->][draw=green, thick] (q23) to node [left] {$s_{2}$} (q19);
+    %\draw [->][draw=green, thick] (q23) to node [left] {$t_{2}$} (q110);
+    %\draw [->][draw=green, thick] (q23) to node [below right] {$t_{2}$} (q18);    
+
+
+    %%%% Labels Figure 1 %%%%
+
+    %face 1
+    %\draw [->][draw=black, thick] (q11) to node [above] {a} (q01);
+    %\draw [->][draw=black, thick] (q14) to node [right] {b} (q01);
+    %\draw [->][draw=black, thick] (q11) to node [above] {a} (q03);
+    %\draw [->][draw=black, thick] (q14) to node [right] {b} (q02);
+    %\draw [->][draw=black, thick] (q12) to node [left] {b} (q03);
+    %\draw [->][draw=black, thick] (q12) to node [left] {b} (q04);
+    %\draw [->][draw=black, thick] (q13) to node [below] {a} (q02);
+    %\draw [->][draw=black, thick] (q13) to node [below] {a} (q04);
+
+    %\draw [->][draw=green, thick] (q21) to node [above] {a} (q14);
+    %\draw [->][draw=green, thick] (q21) to node [right] {b} (q11);
+    %\draw [->][draw=green, thick] (q21) to node [above] {a} (q12);
+    %\draw [->][draw=green, thick] (q21) to node [right] {b} (q13);
+
+    %face 2
+    %\draw [->][draw=black, thick] (q17) to node [above] {a} (q08);
+    %\draw [->][draw=black, thick] (q16) to node [right] {b} (q08);
+    %\draw [->][draw=black, thick] (q17) to node [above] {a} (q06);
+    %\draw [->][draw=black, thick] (q16) to node [right] {b} (q07);
+    %\draw [->][draw=black, thick] (q18) to node [left] {b} (q06);
+    %\draw [->][draw=black, thick] (q18) to node [left] {b} (q05);
+    %\draw [->][draw=black, thick] (q15) to node [below] {a} (q07);
+    %\draw [->][draw=black, thick] (q15) to node [below] {a} (q05);
+
+    %\draw [->][draw=green, thick] (q22) to node [above left] {a} (q16);
+    %\draw [->][draw=green, thick] (q22) to node [right] {b} (q17);
+    %\draw [->][draw=green, thick] (q22) to node [right] {b} (q15);
+    %\draw [->][draw=green, thick] (q22) to node [above left] {a} (q18);
+
+    %face 3
+
+    %\draw [->][draw=green, thick] (q23) to node [above] {a} (q12);
+    %\draw [->][draw=green, thick] (q23) to node [right] {b} (q19);
+    %\draw [->][draw=green, thick] (q23) to node [right] {b} (q110);
+    %\draw [->][draw=green, thick] (q23) to node [above] {a} (q18);
+
+
+
+
+
+
+  \end{tikzpicture}
+\end{document}

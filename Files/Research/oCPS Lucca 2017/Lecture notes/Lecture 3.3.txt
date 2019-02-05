@@ -1,0 +1,51 @@
+#### Abstraction ####
+Model Predictive Control (MPC) is one of the most successful techniques adopted in industry to control multivariable systems in an optimized way under constraints on input and output variables. In MPC, the manipulated inputs are computed in real-time by solving a mathematical programming problem, most frequently a Quadratic Program (QP). I will first introduce the basic concepts of MPC, showing how it can be used as the control component of a cyber-physical system (CPS). Since most CPS's run under fast sampling and limited CPU and memory resources, I will then cover methods to solve QP's within a CPS with high throughput, using simple code and executing arithmetic operations under limited machine precision, and with tight estimates of execution time, and show extensions to solve mixed-integer QPs. Finally, I will also show how MPC based on hybrid dynamical models can be used as an effective tool for control of cyber-physical systems.
+
+We will consider the DP algorithm for finite horizon stochastic sequential decision problems, which
+arise in a broad variety of applications, such as control/robotics/planning, operations research, economics, artificial intelligence, and others. The algorithm in its exact form, computes the optimal cost-to-go functions and an associated optimal policy, but is very often impractical, because of overwhelming computational requirements. Thus one often has to settle for a suboptimal control scheme that strikes a reasonable balance between practical implementation and adequate performance. In this lecture series, after a discussion of the exact DP algorithm, we will review several approaches for suboptimal control based on DP ideas. These come under two general categories:
+(a) Approximation in value space, where we approximate the optimal cost-to-go functions with some other functions, in a scheme based on one-step or multistep lookahead. There are various approaches here, such as problem approximation, aggregation, rollout, model predictive control, parametric approximation (possibly using neural networks), and others.
+(b) Approximation in policy space, where we restrict the policy to lie within a given parametric class (suchas a neural network, or other architecture) and we select the parameters by using a suitable optimization framework.
+There are also mixtures of these two approaches, as exemplified by the recent spectacular successes of
+programs that, among others, have learned how to play challenging games, such as Go, at or above the level of the best humans. We will describe some of the currently popular approximate DP schemes, and review their range of applications
+#####################
+
+
+40-52
+
+1283 gold
+
+52-60
+
+5450 gold
+
+66+
+
+144125 gold
+
+33-41
+
+467 green
+
+41-47
+
+499 green
+
+32-46
+
+396 red
+
+46-49
+
+118
+
+49-61
+
+981
+
+61-74
+
+2966
+
+74-85
+
+6644

@@ -1,0 +1,6 @@
+Lecture 3.4 Dynamic Programming by Dimitri Bertsekas
+
+(Three part lecture)
+1) https://www.youtube.com/watch?v=maFaQCelD7M&feature=youtu.be
+2) https://www.youtube.com/watch?v=A0i5B7rL6x8&feature=youtu.be
+3) https://www.youtube.com/watch?v=edvgys-Njlg&feature=youtu.be

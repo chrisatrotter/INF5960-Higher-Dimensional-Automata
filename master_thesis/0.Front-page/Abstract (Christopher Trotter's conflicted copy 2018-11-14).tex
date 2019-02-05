@@ -1,0 +1,53 @@
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\chapter*{Abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+    
+    %Traditional concurrency models are faced with a number of challenges in its verification of concurrent systems, including causality, information and conflict. In addition, most concurrency models only consider the interleaving semantics and are often represented as automata, also known as \emph{process graphs}, \emph{state transition diagrams} or \emph{labelled transition systems}.
+    
+    
+    %Concurrency models are faced with a number of challenges in its verification of concurrent system.
+    
+    %Concurrency models are faced with a number of challenges in its verification of concurrent systems such as exponential growth of states based on the size of the program and the expressiveness of these models. In addition, the most common concurrency model is that of the automata and
+    
+    %Modern concurrent systems are faced with a number of challenge in its verification of concurrent
+    
+    The geometric model, Higher-dimensional automata (HDA), is a useful and general model for non-interleaving concurrency. In a non-interleaving approach to concurrency, more than one event may happen concurrently and one differentiates between concurrent and interleaving executions, using CSS notation, $a \parallel b \neq a.b + b.a$. HDA also encompass all other commonly used models of concurrency. However, due to HDAs generality they are challenging to work with. Vaughan Pratt introduced sculptures and Chu spaces as models which retain some of the good properties of HDA as well as being easier to work with. Recently, Johansen has introduced ST-structures as another event-based formalism for the same purpose.
+    
+    %The geometric model, Higher-dimensional automata (HDA), is a useful and general model for non-interleaving concurrency. In approaches to non-interleaving, more than one event may happen concurrently. Higher-dimensional automata encompass all other commonly used models of concurrency. However, due to generality higher-dimensional automata are challenging to work with. Vaughan Pratt introduced \emph{Sculptures} and Chu spaces as models which retain some of the good properties of higher-dimensional automata, but easier to work with. Recently, Johansen has introduced ST-structures as another, event-based formalism for the same purpose.
+    
+    This thesis gives a precise definition of sculptures, following the intuition of Pratt, where one can think of the process of modelling a concurrent system using higher-dimensional automata as a \emph{sculpting} process as follows. Take one single higher-dimensional cube, having enough concurrency, and remove cells until the desired concurrent behaviour is obtained. This is different from \emph{composition} where a system is built by composing together smaller systems, which in higher-dimensional automata is done by gluing together cubes.
+    
+    We also develop an algorithm to decide whether an higher-dimensional automaton is a sculpture or not, and use this to show that some simple acyclic higher-dimensional automata are not sculptures. We believe that this contradicts Pratt's intuition that sculptures suffice for the modelling of concurrent behaviour, because not all higher-dimensional automata can be sculpted.
+    
+    We show that Sculptures, Chu spaces and ST-structures are in close correspondence. This nicely captures Pratt's event-state duality and tightens the correlation between ST-structures and higher-dimensional automata, which was left as an open problem by Johansen.
+
+    %In this thesis, we consider a method for modelling a concurrent system called \emph{sculpting} and call the obtained model a \emph{sculpture}. The method is a way of modelling concurrent behaviour of higher-dimensional automata, which is a geometric model of concurrency, where events are represented using tools from directed algebraic topology. We give a precise definition of the method of sculpting based on the intuition of removing faces from a single higher-dimensional cube. We investigate a conjecture posed by Vaughan Pratt \cite{Pratt00Sculptures}, namely that any higher-dimensional automata can be obtained using the sculpting method. We provide a counter-example consisting of a higher-dimensional automaton that is not a sculpture, thereby disproving Pratt's conjecture.
+    
+    %The sculpting method gives a way to precisely identify events in a higher-dimensional automata. We attempt to identify the precise class of higher-dimensional automata for which events can be identified precisely using the standard method used in the literature, that is, as transitions opposite in a square. From the work in \cite{Johansen16STstruct} on ST-structures, which are the event-based counterpart of higher-dimensional automata, we know that higher-dimensional automata are in general not good at identifying events. We investigate the relationship between sculptures and ST-structures to tighten the correlation between ST-structures and higher-dimensional automata, which was left open in \cite{Johansen16STstruct}.
+    
+    
+    
+    
+    %However, as we attempt to show in this thesis, the sculptures are well suited to represent the events too, thus overcoming the problem identifying in \cite[Figure 5]{Johansen16STstruct}. The sculpting method manages to identify exactly the events that are intrinsically captured by higher-dimensional automata, and correspond exactly to the ST-structures.
+    
+
+ 
+    %In this thesis, we consider a method for modelling a concurrent system called sculpting. The method is based on higher-dimensional automata, a geometrical model of concurrency, where events are represented using tools from directed algebraic topology. We give a precise definition of the method of sculpting based on the intuition of removing faces from a single higher-dimensional cube. We investigate a conjecture posed by Vaughan Pratt \cite{Pratt00Sculptures}, namely that any higher-dimensional automata can be obtained using the sculpting method. We provide counter-example consisting of higher-dimensional automata that are not sculptures. We also identify precisely the class of higher-dimensional automata for which events can be identified using the standard method in the literature, that is, as transition opposite in a square.
+    
+    
+    %Modern concurrent systems are considered challenging to reason about because of the nature of concurrent behaviour. Concurrency is highly pervasive and often found on all levels of computation.  Since concurrency is unambiguous and pervasive, mathematical models are necessary for reasoning about concurrent behaviour.
+    
+    %Non-interleaving models are promising when considering the incremental development of concurrent systems. The incremental development considers a method known as action refinement. Action refinement is the method of developing a system by starting with an abstract specification and gradually refining its action by providing more details. However, non-interleaving models lack a tractable algebraic theory. Algebraic topology has been used to define a geometric model of concurrency that has a natural algebraic structure, that is, overcoming the lack of a tractable algebraic theory. This model was named higher-dimensional automata and is a geometric model of concurrency shown to capture main characteristics of both interleaving and non-interleaving models, that is, higher-dimensional automata are highly expressive.
+    
+    %Algebraic topology has been useful in defining a geometric model of concurrency, which has an algebraic structure.
+    
+    %Sculpting is a method of identifying events in a higher-dimensional automaton. Intuitively, a higher-dimensional automaton is an automaton with nicely incorporated squares, cubes and higher-dimensional cubes, which represent the independence of events. In this thesis we show, by following the intuition of Pratt in \cite{Pratt00Sculptures}, that the process of modelling a concurrent system using higher-dimensional automata as a sculpting process $-$ take one single higher-dimensional cube, having enough concurrency, that is, enough events, and remove cells until the desired concurrent behaviour is obtained. 
+    
+    %We also investigate a conjecture posed by Vaughan Pratt in \cite{Pratt00Sculptures}. The conjecture is that any higher-dimensional automata can be obtained using the sculpting method. We first need to define precisely the sculpting method, following again the intuition of Pratt that sculpting is similar to subalgebras. We answer in negative by giving examples of higher-dimensional automata which are not sculptures. We also identify precisely the class of higher-dimensional automata for which events can be identified using the standard method used in the literature, that is, as transitions opposite in a square.
+    
+    %Higher-dimensional automata constitute a very expressive model for concurrent systems with an algebraic structure which can be interpreted geometrically. Intuitively, a higher-dimensional automaton is an automaton with nicely incorporated squares, cubes and higher-dimensional cubes, which represent the independence of actions.  In higher-dimensional automata one can think of the process of modelling a concurrent system using HDA as a \textit{sculpting} process as follows. Take one single higher-dimensional cube, having enough concurrency (i.e., enough events), and remove cells until the desired concurrent behaviour is obtained. This is different than, e.g., what is usually done in process algebras where a system is built by composing together smaller systems, which in HDAs is done by gluing together cubes.
+    
+    %In this thesis, we present

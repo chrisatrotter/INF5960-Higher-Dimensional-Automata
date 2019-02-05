@@ -1,0 +1,102 @@
+#### Abstraction ####
+The emergence of interconnected cyber-physical systems and sensor/actuator networks has given rise to advanced automation applications, where a large amount of sensor data is collected and processed in order to make suitable real-time decisions and to achieve the desired control objectives. However, in situations where some components behave abnormally or become faulty, this may lead to serious degradation in performance or even to catastrophic system failures, especially due to cascaded effects of the interconnected subsystems. The goal of this presentation is to motivate the need for health monitoring, fault diagnosis and security of interconnected cyber-physical systems and to provide a methodology for designing and analyzing fault-tolerant cyber-physical systems with complex nonlinear dynamics. Various detection, isolation and accommodation algorithms will be presented and illustrated, and directions for future research will be discussed. 
+#####################
+
+Fault Diagnosis of Interconnected Cyber Physical Systems
+
+Motivation for fault diagnosis
+
+The smart revolution:
+	Smart phones
+	Smart cars
+	Smart grids
+	smart buildings
+	smart cities
+	smart camera networks
+	smart water networks
+	-> Smart-X
+
+It tells us something about where the technology is advancing towards.
+
+Hardware:
+	- Sensing & actuation devices
+	- Embedded computing
+	- Wide area connectivity
+Software:
+	- Data management
+	- Decision making algorithms
+	- Learning algorithms
+	- Optimization an control
+
+From a software viewpoint, the advances have not been that amazing.
+Decision making, learning is still at the young stage of advances.
+
+Digital advances provide the ICT infrastructure not the INTELLIGENCE(so far)
+Infrastructure will be further enchanced via the IoT.
+Smart-X vs. Smart-ready-X
+
+Control systems an machine learning are at the heart of tranforming the smart-X.
+
+More proactive, more planning ahead
+More discrete-event, more event-triggered
+More machine learning, handling of larger volume of data, more heterogeneous data
+Handling of more uncertainty, fault tolerance
+Handling of human-machine interaction
+
+Incorporating different forms of data need a better advancement.
+
+Fragility 	- Wrong decisions escalation to a catastrophic failure
+			- Fault propagation from one subsystem to another
+			- Unrealiable and unstrustworthy automation procedures.
+
+It is important that people trust the autonomous system, without that the
+whole system is worthless since nobody will use it. No matter how great
+the system might be.
+
+
+Black Swan Theory - Nassim Nicholas Taleb
+"Metaphor that describes an event that comes as a suprise, has a major effect, and is
+often inappropriately rationalized after the fact with the benefit of hindsight(extreme outliers)"
+
+Control algorithm
+Supervisory algorithm
+
+Fault scenarios
+	- System/process faults
+	- Actuator faults
+	- Sensor faults
+	- Communication faults
+	- Controller faults
+	- Environment faults
+	- Malicious attacks(Cyber-security)(intentional)
+
+
+Fault diagnosis steps:
+	- fault detection
+	- fault isolation
+	- fault identification and risk assessment
+	- fault accommodation
+
+fault vs. modeling uncertainty(exploit spatial and temporal correlations)
+How do you handle multiple faults? Can we use HDA? Event-structures? Modeling for fault diagnosis?
+
+books:
+J. Gentler. Fault Detection and diagnosis in Engineering
+M. Blanke, M. Kinnaert, Diagnosis of fault tolerant...
+
+
+Interconnected cyber-physical systems
+
+Analytical redundancy approach vs. hardware redundancy
+
+
+
+
+
+foundatitions of fault diagnosis
+
+sensor fault diagnosis
+
+
+
+application example: smart buildings

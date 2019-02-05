@@ -1,0 +1,26 @@
+#### Abstraction ####
+We will start by presenting the basic modeling frameworks for discrete event and hybrid systems placing them in the context of CPS. Key technical challenges related to the control and optimization of such systems will be identified, including scalability, decentralization, communication, global vs local optimality, and the increasing integration of data into control and optimization schemes. We will then address some of these challenges focusing mostly on the question of how to decentralize solutions to related problems. For parametric optimization problems, conditions and explicit distributed algorithms can be derived. For dynamic optimization problems, however, decentralization is particularly challenging and we will discuss the reasons and nature of this difficulty. We will discuss a general approach (termed â€œIPA Calculusâ€) for deriving event-driven gradient-based algorithms which can be used to solve many of these problems and will show how fully distributed as well as â€œalmost distributedâ€ algorithms may be derived. We will also address the problem of global vs local optimality by discussing some methods for escaping local optima and seeking better ones. Throughout the presentation, examples of CPS will be presented to illustrate how to apply the methodologies introduced and analyzed.
+#####################
+
+Discrete event and hybrid system models and models and methods for CPS
+
+Modeling: Automata(FSM)(E, X, gamma, f, x0).
+
+E:Event set
+X:State space
+gamma(X): set of feasible or enabled events at state x
+f: state transition function f: X x E -> X (undefined for events e notIn gamma(x))
+x0: Initial state, X0 In X
+
+everything can be an event in the event-driven timed automaton.
+
+Question: what if there are concurrency with events? Does this modeling emphasize a sequential ordering?
+
+(markov-chain)
+
+Next step is processes where the information might come from when it comes to the list of events to be handled.
+
+Hybrid Automata
+
+Is the most complicated defined automata in the sense that it has 11 defined parameter values.
+

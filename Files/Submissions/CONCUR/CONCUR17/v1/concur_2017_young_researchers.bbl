@@ -1,0 +1,69 @@
+\begin{thebibliography}{10}
+
+\bibitem{castell1989}
+I.~Castellani G.~Boudol.
+\newblock Permutation of transitions: An event structure semantics for ccs and
+  sccs, in: J. w. de bakker, w. p. de roever, g. rozenberg(eds.).
+\newblock {\em Rex Workshop, Vol. 354, of Lecture Notes in Computer Science},
+  pages 411--427, 1989.
+
+\bibitem{winsk1979}
+G.~Winskel M.~Nielsen, G.~Plotkin.
+\newblock Petri nets, event structures and domains, in g. kahn(ed.).
+\newblock {\em Semantics of Concurrent Computation, Vol. 70, of Lecture Notes
+  in Computer Science}, pages 266--284, 1979.
+
+\bibitem{pratt1991}
+V.~R. Pratt.
+\newblock Modeling concurrency with geometry.
+\newblock In {\em in D. S. Wise(Ed.), Conference Record of the 18th Annual ACM
+  Symposium on Principles of Programming Languages (POPL'91)}, pages 311--322,
+  doi:10.1145/99583.99625, 1991. ACM Press.
+
+\bibitem{pratt2000}
+V.~R. Pratt.
+\newblock Higher dimensional automata revisited.
+\newblock In {\em Math. Struct. Comput. Sci. 10(4)}, pages 525--548,
+  doi:10.1017/S0960129500003169, 2000.
+
+\bibitem{pratt2002}
+V.~R. Pratt.
+\newblock Event-state duality: The enriched case, in: L. brim, p. jancar, m.
+  kretinsky, a. kucera(eds.).
+\newblock {\em 13th International Conference on Concurrency Theory(CONCUR'02),
+  Vol. 2421 of Lecture Notes in Computer Science}, pages 41--56, 2002.
+
+\bibitem{glab1995}
+G.~Plotkin R.~J.~van Glabbeek.
+\newblock Configuration structures, in: 10th annual ieee symposium on logic in
+  computer science(lics'95).
+\newblock In {\em IEEE Computer Society}, pages 199--209,
+  doi:10.1109/LICS.1995.523257, 1995.
+
+\bibitem{glab2009}
+G.~Plotkin R.~J.~van Glabbeek.
+\newblock Configuration structures, event structures and petri nets.
+\newblock In {\em Theor. Comput. Sci. 410(41)}, pages 4111--4159,
+  doi:10.1016/j.tcs.2009.06.014, 2009.
+
+\bibitem{goub2012}
+E.~Goubault S.~Mimram.
+\newblock Formal relationships between geometrical and classical models for
+  concurrency.
+\newblock In {\em Electronic Notes in Theoretical Computer Science 283,
+  Proceedings of the Workshop on Geometric and Topological Methods in Computer
+  Science(GETCO)}, pages 77--109, doi:10.1016/j.entcs.2012.05.007, 2012.
+
+\bibitem{glab2006}
+R.~J. van Glabbeek.
+\newblock On the expressiveness of higher dimensional automata.
+\newblock In {\em Theor. Comput. Sci. 356(3)}, pages 311--322,
+  doi:10.1016/j.tcs.2006.02.012, 2006.
+
+\bibitem{winsk1986}
+G.~Winskel.
+\newblock Event structures, in w. brauer, w. reisig, g. rozenberg(eds.).
+\newblock {\em Advances in Petri nets, Vol. 255, of Lecture Notes in Computer
+  Science}, pages 325--392, 1986.
+
+\end{thebibliography}

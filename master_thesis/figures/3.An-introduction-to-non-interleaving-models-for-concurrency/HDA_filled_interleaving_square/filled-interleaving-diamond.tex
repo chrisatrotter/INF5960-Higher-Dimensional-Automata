@@ -1,0 +1,44 @@
+\documentclass[tikz,border=10pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows,automata,shapes,positioning,decorations.pathmorphing}
+% \tikzset{->,>=stealth',auto}
+\tikzset{->,auto}
+\tikzset{>={Latex[width=2mm,length=2mm]}}
+\tikzset{state/.style={shape=circle, draw, fill=white, initial text=,
+    inner sep=.5mm, minimum size=2mm}}
+\tikzset{state with output/.style={shape=rectangle split, rectangle
+    split parts=2, draw, fill=white,
+    initial text=, inner sep=1mm}}
+\tikzset{every node={font=\footnotesize}}
+
+\begin{document}
+  \begin{tikzpicture}[node distance=4cm, align=center]
+    \title{A transition system}
+     \path[fill=black!15] (0,0) to (2.84,-2.84) to (5.65,0) to (2.84,2.84) to (0,0);
+     
+    \node(q1)[state] [label=left:{$q^1_0$}]                        {};
+    \node(q2)[state] [above right of=q1, label=above:{$q^2_0$}]    {};
+    \node(q3)[state] [below right of=q1, label=below:{$q^3_0$}]    {};
+    \node(q4)[state] [below right of=q2, label=right:{$q^4_0$}]    {};
+    
+    \node(q11) [left of=q4] {};
+    \node(q12)[right of=q1] {};
+    
+    \node(text) at (2.8,-0.2) {{$q_2$}};
+    
+    %\draw [->][draw=black] (q1.center) to [out =40,in =110] node {} (q11.center) to [out=-70,in=-150] (q4.center);
+    %\draw[->][draw=black] (q1.center) to node [bend left=50, above left] {} (q11.center) to node [bend right, above left] {} (q11.center) to node [bend right=50, above left] {} (q12.center) to node [bend left=50, above left] (q4.center);
+    
+    \draw [->][draw=black] (q1) to [bend left=45] (q11.center) to [bend right=45] (q12.center) to [bend left=45] (q4);
+%    \draw [->][draw=black] (q1.center) to [out=70,in=110] node {} (q11.center) to [out=-70, in=-150] (q4.center);
+    
+    \draw [->][draw=black] (q1) to node [above left] {$a$} (q2);
+    \draw [->][draw=black] (q1) to node [below left] {$b$} (q3);
+    \draw [->][draw=black] (q2) to node [above right] {$b$} (q4);
+    \draw [->][draw=black] (q3) to node [below right] {$a$} (q4);
+
+
+  \end{tikzpicture}
+\end{document}

@@ -1,0 +1,79 @@
+\section{Chu Spaces}
+\label{sec:Chu-spaces}
+    The model of Chu spaces has been developed by Gupta and Pratt \cite{gupta94phd_Chu, pratt95Chu, Pratt00Sculptures} as an attempt to study the event-state duality as argued for by Pratt in \cite{Pratt02eventStateDuality}. It is a model that attempt to capture both the event-based and state-based aspect of a model symmetrically, where the translation between a schedule and automaton should be considered equally expressive.
+    
+    Chu spaces represent processes as automata or schedules, and the Chu duality gives a simple way of translating between automata and schedules. A Chu space is a binary relation between two sets. The view of states and events are organized into two complementary spaces, namely, state space, \emph{automata}, and event space, \emph{schedules}.
+        
+   % Besides viewing elements and predicates more symmetrically, this element-predicate approach to Chu spaces also view set theory and category theory more symmetrically. From a categorical perspective a Chu space is an object of a category $\mathcal{C}$ together with some incident arrows. A set perspective a Chu space is a generalized topological space whose set $X$ of "\emph{open sets}" need not be closed under union or finite intersection, and which allows $\mid k \mid\ > 2$.
+
+    \begin{definition}[Chu spaces]
+        \label{def:Chu_spaces}
+        A \emph{Chu space} over $K$ is any triple $\mathcal{A}$ = (E,r,X) where E and X are sets and $r: E \times X \rightarrow K$ is an arbitrary function called the \emph{matrix} of the Chu space.
+    \end{definition}
+    
+    % In general, the order on $K$ is used to define the \emph{meaningful steps} in the Chu space.
+    A Chu space can be viewed as a matrix with entries from $K$, where rows represent the events from $E$ and columns represent the configurations in $X$.  As an example, an entry $r((e,x))=0$ says that the event $e$ is not started yet in the configuration $x\in X$.  In consequence, a Chu space can also be viewed as the structure $(E,X)$ where $X\subseteq K^{E}$. % When $K$ is \textbf{2} then 
+    %Configuration structures~ \cite{GlabbeekP95config, GlabbeekP09configStruct} thus correspond to Chu spaces over $K= \mathbf{2}$.
+    
+    Chu spaces can be viewed in various equivalent ways \cite[Chapter 5]{gupta94phd_Chu}.  For our setting, we take the view of $E$ as the set of events and $X$ as the set of configurations. The structure $K$ is representing the possible values the events may take. For example, $K= \mathbf{2}= \{0,1\}$ is the classical case of an event being either not started ($0$) or terminated ($1$) where an order of $0 < 1$ would be used to define the steps in the system, that is, steps between states must respect the increasing order when lifted pointwise from $K$ to $X$.
+    
+    Bringing higher-dimensional automata and ST-structures together is accomplished by restricting higher-dimensional automata while generalizing ST-structures. Higher-dimensional automata are restricted to their acyclic case, in other words, a single cube. ST-structures are generalized to capture the "\emph{during}" aspect in the event-based setting, extending configuration structures with this notion. Therefore we need another structure $K= \mathbf{3}= \{0, \executing , 1\}$ with the order $0 < \executing\ < 1$, introducing the value $\executing$ to stand for \textit{during}, or \textit{in transition}. Chu space over $\mathbf{3}$ is also called a triadic Chu space. Note that Gupta studied in \cite{gupta94phd_Chu} Chu spaces over $\mathbf{2}$, whereas Pratt proposed to study Chu spaces over $\mathbf{3}$ and other structures in \cite{Pratt03trans_cancel}.
+
+    \begin{definition}[Morphism of Chu spaces]
+        \label{def:morphism_of_Chu_spaces}
+        A morphism of Chu spaces (E,r,X) $\rightarrow$ (A,s,Y) is a pair of functions ($f:E \rightarrow A, g:Y \rightarrow X$) satisfying \emph{adjointness} condition for all $e$ and for all $y$:
+        
+        \begin{equation}
+            g(y)(e) = y(f(e))\label{categoryChu1}
+        \end{equation} 
+        \begin{equation}
+            e(g(y)) = f(e)(y)\label{categoryChu2}
+        \end{equation} 
+    \end{definition}
+    
+    The category of Chu spaces, $\categoryChu$, has morphisms, called Chu transforms in \cite[Chapter 4]{gupta94phd_Chu}, between Chu spaces $(E,X)$ and $(A,Y)$ defined to be a pair $(f,g)$ of maps $f: E \rightarrow A$ and $g: Y \rightarrow X$ that satisfy the adjointness condition.
+
+    %Dualizing interchanges $f$ and $g$, thereby reversing the morphism since $f$ and $g$ are oppositely oriented. The category of Chu spaces over $K$ and their morphisms is denoted $Chu(Set, K)$.
+
+
+    %The model of Chu spaces has been developed by Gupta and Pratt \cite{gupta94phd_Chu,pratt95Chu} as an attempt to study the event-state duality as argued for by Pratt \cite{Pratt02eventStateDuality}.  A \textit{Chu space} over a finite set $K$ is a triple $\chuPrat=(E,r,X)$ with $E$ and $X$ sets and $r:E\times X\rightarrow K$ a function called the \emph{matrix} of the Chu space.
+
+    %Chu spaces can be viewed in various equivalent ways \cite[Chap.5]{gupta94phd_Chu}.  For our setting, we take the view of $E$ as the set of events and $X$ as the set of configurations. The structure $K$ is representing the possible values the events may take, for example, $K= \mathbf{2}= \{0,1\}$ is the classical case of an event being either not started, $0$, or terminated, $1$, where an order of $0 < 1$ would be used to define the steps in the system, that is, steps between states must respect the increasing order when lifted pointwise from $K$ to $X$.
+
+    % In general, the order on $K$ is used to define the \emph{meaningful steps} in the Chu space.
+    %    A Chu space can be viewed as a matrix with entries from $K$, where rows represent the events from $E$ and columns represent the configurations in $X$.  As an example, an entry $r((e,x))=0$ says that the event $e$ is not started yet in the configuration $x\in X$.  In consequence, a Chu space can also be viewed as the structure $(E,X)$ where $X\subseteq K^{E}$. % When $K$ is \textbf{2} then 
+    %Configuration structures~ \cite{GlabbeekP95config, GlabbeekP09configStruct} thus correspond to Chu spaces over $K= \mathbf{2}$.
+    
+    The method of "\emph{sculpting}" is considered in regards to the Chu space approach to represent higher-dimensional automata. One starts with a single large, possibly infinite, dimensional cube and "\emph{sculpts}" the desired process by removing unwanted faces. Initially, a cube constitutes the events to be a discrete and unstructured set, forming a complete cube. By removing states, the event set becomes structured. For example, sculpting two events by removing all the states distinguishing them renders them equivalent. The sculpting method point of view has been considered elsewhere in the higher-dimensional automata literature \cite{Goubault92homologyof, Fajstrup98detectingdeadlocks}.
+    
+    In \cite{Pratt00Sculptures}, Pratt describes the ways to specify concurrent processes by sculpting, composition, and transformation as follows:
+    
+    \begin{quote}
+        The programming as a sculpture: start from a sufficient large cube and hew out the desired process by chiseling away the unwanted states.
+        While this view is attractively simple conceptually, it is not by itself a practical way of specifying a concurrent process. An alternative approach is composition, in which complex processes are built from smaller ones with suitable operators, including intrinsically concurrent operators such as asynchronous parallel composition. Yet another approach is transformation, in which new processes are constructed from old by reshaping them appropriately.
+    
+        These three activities, sculptures, composition, and transformation, are simultaneously compatible and complementary, and can therefore usefully be taken as a basis for concurrent programming. Very loosely speaking they correspond respectively to subalgebras, products, and homomorphisms, which play central and complementary roles in the algebraic approach to both logic and programming.
+    \end{quote}
+
+    %In the cubical set approach to higher-dimensional automata an automaton is a, possibly infinite, set of cubes of various dimensions. In the Chu space approach one starts instead with a single cube of very large, possible infinite, dimension and "\emph{sculpts}" the desired process by removing unwanted faces. The axes of the starting cube constitute the events, initially a discrete or unstructured set. The removal of states has the effect of structuring the event set. For example, sculpting renders two events equivalent, or synchronized, after all states distinguishing them have been removed.
+    
+    %The sculpture way of looking at Chu spaces does not reveal the intrinsic symmetry of events and states. An alternative presentation that brings out the symmetry better is a matrix whose rows and columns are indexed by events and state respectively, and whose entries are drawn from the set $\mathbf{3} = \{0,1,2\}$. The columns of this matrix constitute the selected faces of the cube.
+    
+    %This is programming as sculpture: start from a sufficient large cube and hew out the desired process by chiseling away the unwanted states. This point of view has been taken elsewhere in the higher-dimensional literature \cite{Goubault92homologyof, Fajstrup98detectingdeadlocks}.
+    
+%    While this view is attractively simple conceptually, it is not by itself a practical way of specifying a concurrent process. An alternative approach is composition, in which complex processes are built from smaller ones with suitable operators, including intrinsically concurrent operators such as asynchronous parallel composition. Yet another approach is transformation, in which new processes are constructed from old by reshaping them appropriately.
+    
+ %   These three activities, sculptures, composition, and transformation, are simultaneously compatible and complementary, and can therefore usefully be taken as a basis for concurrent programming. Very loosely speaking they correspond respectively to subalgebras, products, and homomorphisms, which play central and complementary roles in the algebraic approach to both logic and programming.
+    
+    %Event structures and  Sculptures can be described in terms of Chu spaces, but the expressiveness of the model may be to strong such that there may be subtle strands of information lost within the translation.
+
+%\begin{itemize}
+%    \item Chu Spaces, these seem to correlate with Sculptures. Find relation and differences. Note: Chu Spaces over 3.
+%    \item See if there is any related works into ST-structures, or HDA which is similar to what is investigated in this thesis.
+%    \item take the relation between ST-structures and HDA from ST-structures paper to Christian. Show the collapsing of non-isomorphic to isomorphic.
+%    \item Problem with identifying events with HDA
+%    \item Translating ST-structure to HDA, vice versa(problem?)
+%    \item defining sculpture as Chu spaces(d-dimensional grid definition)
+%\end{itemize}
+
+%This problem has been overlooked throughout the work with HDAs and is to be described in detail here to find a way to solve this once and for all with ST-structures and Sculptures.

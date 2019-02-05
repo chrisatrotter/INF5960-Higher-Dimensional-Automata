@@ -1,0 +1,62 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows,automata,shapes,positioning,decorations.pathmorphing}
+% \tikzset{->,>=stealth',auto}
+\tikzset{->,auto}
+\tikzset{>={Latex[width=2mm,length=2mm]}}
+\tikzset{state/.style={shape=circle, draw, fill=white, initial text=,
+    inner sep=.5mm, minimum size=2mm}}
+\tikzset{state with output/.style={shape=rectangle split, rectangle
+    split parts=2, draw, fill=white,
+    initial text=, inner sep=1mm}}
+\tikzset{every node={font=\footnotesize}}
+\begin{document}
+  \begin{tikzpicture}[node distance=3cm, align=center]
+  \tikzstyle{every node}=[font=\footnotesize]
+    \tikzstyle{every state}=[fill=white,shape=circle,inner sep=.5mm,minimum size=3mm]
+    \title{Strong asymmetric conflict a + b}
+    
+    \node[state](q1) [label=left:{$(a,a)$}, label=right:{$(bc,bc)$}]                {};
+    \node[state](q2) [above of=q1, label=above:{$(\emptyset, \emptyset)$}]          {};
+    \node[state](q3) at (2.5,1.5) [label=right:{$(b,b)$}]                           {};
+    \node(q4) at (0, -2) []                                                         {};
+  
+    
+    \node[state](q11) [right=8cm, label=left:{$(a,a)$}]                                 {};
+    \node[state](q22) [above of=q11, label=above:{$(\emptyset, \emptyset)$}]            {};
+    \node[state](q33) at (10.5,1.5) [label=right:{$(b,b)$}]                             {};
+    \node(q44) at (8.1, -2) []                                                          {};
+    \node[state](q55) at (10.5, -1) [label=right:{$(bc,bc)$}]                           {};
+    \node(q66) at (10.5, -3) []                                                         {};
+    
+    
+    %%%% HDA isomorphism
+    \node(HDA) at (5, 3)  {$H \not\cong H'$};
+    
+    %%%% ST-structure isomorphism
+    \node(ST) at (5, 0)  {$ST \cong ST'$};
+    
+    %%%% Left figure
+    \draw [->][draw=black, thick] (q2) to node [below left] {$b$} (q3);
+    \draw [->][draw=black, thick] (q2) to node [above right] {$(b,\emptyset)$} (q3);
+    \draw [->][draw=black, thick] (q2) to node [left] {$(a,\emptyset)$} (q1);
+    \draw [->][draw=black, thick] (q2) to node [right] {$a$} (q1);
+    \draw [->][draw=black, thick] (q3) to node [above left] {$c$} (q1);
+    \draw [->][draw=black, thick] (q3) to node [below right] {$(bc,b)$} (q1);
+    \draw [->][draw=black, dotted] (q1) to node [right] {$d$} (q4);
+  
+    
+    %%%% Right figure
+    \draw [->][draw=black, thick] (q22) to node [below left] {$b$} (q33);
+    \draw [->][draw=black, thick] (q22) to node [above right] {$(b,\emptyset)$} (q33);
+    \draw [->][draw=black, thick] (q22) to node [left] {$(a,\emptyset)$} (q11);
+    \draw [->][draw=black, thick] (q22) to node [right] {$a$} (q11);
+    \draw [->][draw=black, thick] (q33) to node [left] {$c$} (q55);
+    \draw [->][draw=black, thick] (q33) to node [right] {$(bc,b)$} (q55);
+    \draw [->][draw=black, dotted] (q11) to node [right] {$d$} (q44);
+    \draw [->][draw=black, dotted] (q55) to node [right] {$d$} (q66);
+    
+
+  \end{tikzpicture}
+\end{document}

@@ -1,0 +1,71 @@
+#### Abstraction ####
+The notion of Cyber-Physical Systems (CPS), as well as related topics like Internet of Things, Industrie 4.0 and Smart Manufacturing, is currently attracting quite a lot of attention both within manufacturing and process industries. Clearly, CPS offers many potential applications for automation, ranging from how to engineer the installation of new plants to production management and more intelligent maintenance schemes. There are multiple potential scenarios on how this will also impact control and operations in the process and manufacturing industries. On the one hand, through a better connectivity, information will be much easier available, which could result in aggregated and more complex systems due to the increased scope. On the other hand, some scenarios speak for more distributed decision-making and simplicity where one naturally also needs to consider the optimality aspects and be able manage the collaboration between the nodes. Regardless of the scenario that will realize, it can be expected that the importance of optimization will increase and this presentation discusses some aspects related to the opportunities, challenges and changes triggered by CPS.
+####################
+
+Motivation of Cyber Physical Systems from an industrial perspective
+
+When attending the motivation of Cyber Physical Systems(CPS) from an industrial perspective it was introduced by (Lecture X), who is (Specialist in X), and
+he said the following:
+
+	"Modeling is the important part"
+
+This was an important point that was followed up with the fact that modeling is 50% of a Model predictive control(MPC) project. Furthermore, the motivation of the talk was concepts that have been introduced in an industrial context such as Big Data, Deep Learning, Artificial Intelligence(AI) and digitalization. These concepts have been important in correlation with Internet of Things(IoT) and Cyber Physical Systems(in the talk, IoT is equivalent to CPS). From an industrial standpoint, there is extensively potential in utilizing data that is collected by developing what is known as Deep Learning(DL). Deep learning is a method of aquiring data, adapting it to the knowledge of a system such that the system may "learn" from the aquired data, also known as Machine Learning(ML). With this comes also challenges such as getting a hold of data for machine learning and create neural networks. A extensive part of the lecture went in depth about examples, issues and solutions to such challenges and including the notion of Smart Manufacturing. As a conclusion to the lecture, it was focused on Cyber Physical System Security(CPSS) and kurswosh law, signaling, to emphesize the CPS perspective of these challenges.
+####################
+
+quote: Modelling is the important part
+
+ABB is active within three main fields: Utilities, Industry and Transport & Infrastructure.
+Focus of the lecture is Industry:
+	- control is what has a footprint on all seven centers.
+
+
+Future automation:
+
+Industrial Digitialization
+	- What does that mean?
+	- It has not reached the world of business to business.
+	- Industrial perspective: is it benefitial for the customer?
+
+Future automation system architecture: Trade-off between edge and cloud.(edge? cloud?)
+
+
+Model predictive control(?)
+
+function-based model or state-based model.
+
+Modeling is 50% of a MPC project.
+
+DeepMind AI for data center cooling: Reduces googles data centres cooling bill by 40%.(use by machine learning).
+
+Problem with the industry is to get a hold of the data to machine learning and create a neuroal network.
+
+Moving up the value chain - actual mining:
+
+Looking at real-time production scheduling.
+
+Modelling vision - Automation of automation
+
+mechanical models are easier since it is easier to present and show.
+
+High fidelity model
+
+Process models we produce low fidelity models. Factory acceptance test.
+
+Linear programming.
+
+Shift from closed to open architecture.
+
+Apply machine learning and deep learning.
+
+The real value is made higher up on the value chain.
+
+CPS perspective:
+
+Cyber Physical System Security.
+kurswosh law - signaling.
+
+
+
+
+
+

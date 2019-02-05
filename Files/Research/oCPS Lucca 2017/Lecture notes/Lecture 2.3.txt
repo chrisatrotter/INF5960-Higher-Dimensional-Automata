@@ -1,0 +1,174 @@
+#### Abstraction ####
+Model checking is a powerful verification technique for bug hunting in
+hardware circuits and software programs. Its extension to probabilistic
+models enables the quantitative evaluation of system performance and
+reliability along with correctness. Probabilistic model checking has
+applications in e.g. robotics, energy-aware computing, RAMS analysis,
+distributed computing, and probabilistic programming. It provides hard
+guarantees that quantitative system requirements are met, facilitates
+bottleneck analysis, and recently enables synthesizing optimal system
+parameters. In this talk, I present some applications, uncover some of
+its key algorithmic ingredients, show its scalability to Markov models
+of millions of states, and give some insights in recent developments in
+parameter synthesis.
+#####################
+
+Performance and Reliability analysis by model checking
+
+state space explosion problem is a big issue when it comes to insufficient memory.
+violations will be given a demonstration of the fault "counter example".
+
+It is typically the corner cases the mistakes are made.
+
+Gerard J. Holzmann -> SPIN book.
+
+"Spin is a popular open-source software..."
+
+Example:
+	Needham-schroeder protocol
+	IEEE cache coherence protocol
+	Hardware property language like PSL(property specification logic)(LTL logic)(LL)
+	C, .NET code verification
+	NASA space mission software
+
+The system is to large to handle as whole, so parts of the systems are tested by model checking.
+
+Probabalistic Model checking
+
+"Probabalistic model checking is one of the main challenges for the future." - Edmund J. Clarke (The birth of model checking, 2008)
+Theory in Pratice for system design and verification.
+Quantitative vs. Qualitative correctness.
+
+The relevance of Probablilities
+	
+	Reasons:
+	- Randomised algorithms
+	- Reducing Complexity
+	- Avoiding the Impossible (FLP, Read about this later)(Ben Or's possibility)
+	- Probabalistic Programs
+	- Reliability
+	- Performance
+	- Robotics
+	- Optimisation
+	- Systems Biology
+
+	Dynamic Fault Trees
+
+	Reliability Engineering
+
+	What is the mean-time when using fault trees. Used in Risk analysis.
+
+	Petri nets with Timed transitions, Immediate transitions, Natural weight. Non-deterministic choice.
+
+	Stochastic scheduling
+
+	Enzyme-catalysed substrate conversion
+
+Markos Models
+	All examples shown are markov models
+
+	Continuous-time markov models.
+
+	Markov model hierarchy table:
+		- Deterministic 
+			- Discrete(DTMC)
+			- Continous(MC)
+		- Nondeterministic
+			- Discrete(MDP)
+			- Continous(CTMDP)
+		- Compositional
+			- Discrete(PA)
+			- Markov automata(MA)
+
+Key algorithms
+	Properties:
+		- Logic
+			- Discrete probablistic (CTL)
+			- Continuous probablistic timed (CTL)
+		-Monitors
+			- Discrete deterministic automata(safety and LTL)
+			- Continuous deterministic timed automata(MITL fragments)
+
+	Core problem: Computing reachability problems.
+
+Example:
+	Reachability Probabilities
+
+	Consider a finite MC with s in S and G subset of S.
+	Aim: determine Pr(S entails diamond G) = Prs{pi in Paths(s)| pi entails diamond G}
+
+	Is this a combinatorical issue? Handling this as a combinatorial problem.
+
+Continuous-time markov-chain
+A CTMC is a DTMC with an exit rate function r: S -> R>0 where r(s) is the rate of an exponential distribution.
+
+Zeno theorem: in every CTMC, almost surely no Zeno runs occur. In contrast to timed automata verification, Zeno runs thus pose no problem.
+Solving systems of Volterra integral equations is harder. Suffering from nummerical stability.
+Transient probabilities = Timed rechability probabilities
+
+Uniformisation:
+	CTMC C is uniform if r(s) = r for all s in S for some r in R>0
+	Transient probabilities are preserved by uniformisation.
+
+
+Model checking Fault trees
+	-skip
+
+Parameter synthesis
+	Probabilistic model checking is applicable to various areas, e.g.:
+
+	- fault trees
+	- randomised algorithms
+	- systems biology
+
+Limitation:
+	Probabilities need to be known apriori. Is this a valid assumption?
+
+	Aim: Partition the parameter space into safe and unsafe regions.
+
+	partition the parameter space into safe and unsafe regions.
+		- Region = half-space defined by linear inequalities over the parameters
+		- A region R for threshold <= B is safe if no MC with v in R exceeds B
+		- A region R for threshold <= B is unsafe if MC with v in R exceeds B
+
+	satisfiability modulo theory, NP-complete SAT.
+
+	Satisfiability theory is over a certain domain. It explains the expressivity over these domains.
+
+	Hierartical SCC Decomposition. SMT solvers.
+
+	Refinement with the SMT.
+
+	CAV 2015 conference.
+
+
+multi-objective MDP: use LP[Etessami et al. 2008]
+multi-objective parametric MDP: use special type NLP[Cubuktepe et al., 2017]
+
+Functions as parameters.
+
+QEST'14, CAV'15, ATVA'16, TACAS'17
+
+Epilogue
+	What does this have to do with CPS?
+
+		The power of model checking is that it goes over a broad field than CPS.
+
+
+	Principles of model checking. MIT Press 2008.
+
+	The probablistic model checking landscape. IEEE LICS, 2016.
+
+	Continuous state spaces, what is the problem here?
+
+
+
+Current research
+	tight game-based abstractions
+	parameter synthesis
+
+
+
+
+
+	

@@ -1,0 +1,221 @@
+\usepackage{savesym}
+\savesymbol{num}
+\usepackage{microtype}
+%\usepackage[sort, noadjust]{cite}
+\usepackage[T1]{fontenc}
+\usepackage{bbm,mathtools}
+\usepackage[heavycircles]{stmaryrd}
+\usepackage{paralist}
+
+
+\usepackage[matrix,arrow,cmtip,curve]{xy}
+\SelectTips{cm}{}\SilentMatrices\CompileMatrices
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows,automata,shapes,positioning,decorations.pathmorphing}
+% \tikzset{->,>=stealth',auto}
+\tikzset{->,auto}
+\tikzset{state/.style={shape=circle, draw, fill=white, initial text=,
+    inner sep=.5mm, minimum size=2mm}}
+\tikzset{state with output/.style={shape=rectangle split, rectangle
+    split parts=2, draw, fill=white,
+    initial text=, inner sep=1mm}}
+\tikzset{every node={font=\footnotesize}}
+
+\usepackage{enumitem}
+
+\usepackage{graphicx}
+
+% \usepackage{sidecap}
+
+% \usepackage{wrapfig}
+
+%\theoremstyle{plain}\newtheorem{proposition}[theorem]{Proposition}
+%\theoremstyle{definition}\newtheorem{problem}[theorem]{Problem}
+
+%%%%%%%%%%%%%%%%%%%
+
+%%% Commands from Christopher
+\newcommand*\allTS{\ensuremath{\mathbb{TS}}}
+\newcommand*\allATS{\ensuremath{\mathbb{ATS}}}
+\newcommand*\allES{\ensuremath{\mathbb{ES}}}
+\newcommand*\allCS{\ensuremath{\mathbb{CS}}}
+
+% \renewcommand*\textfraction{.1}
+\renewcommand*\topfraction{.8}
+% \setcounter{topnumber}{1}
+
+\let\po\vec
+
+% because llncs doesn't put automatic \qed's
+%\let\oldendpro@f\endproof
+%\def\endproof{\qed\oldendpro@f}
+
+\newcommand*\Nat{\mathbbm{N}}
+\newcommand*\Natp{{\mathbbm{N}_+}}
+\newcommand*\Int{\mathbbm{Z}}
+\newcommand*\Real{\mathbbm{R}}
+\newcommand*\Realnn{\Real_{ \ge 0}}
+\newcommand*\parto{\rightharpoonup}
+\newcommand*\cat[1]{\text{\textup{\textsf{#1}}}}
+\newcommand*\Dgr{\cat{Dgr}}
+\newcommand*\pCub{\cat{pCub}}
+\newcommand*\PPS{\cat{PPS}}
+\newcommand*\HDA{\cat{HDA}}
+\newcommand*\LHDA{\cat{LHDA}}
+\newcommand*\HDP{\cat{HDP}}
+\newcommand*\HDT{\cat{HDT}}
+\newcommand*\HDAt{\cat{HDO}}
+\newcommand*\PHDA{\cat{PHDA}}
+\newcommand*\HDAh{\HDA_\textup{\textsf{h}}}
+\newcommand*\LHDAh{\LHDA_\textup{\textsf{h}}}
+\newcommand*\HDTh{\HDT_\textup{\textsf{h}}}
+\newcommand*\HDPh{\HDP_\textup{\textsf{h}}}
+\newcommand*\PHDAh{\PHDA_\textup{\textsf{h}}}
+\newcommand*\ie{\textit{i.e.,}}
+\newcommand*\etc{\textit{etc}}
+\newcommand*\cf{\textit{cf.}}
+\newcommand*\eg{\textit{e.g.,}}
+\newcommand*\etal{\textit{et~al.}}
+\newcommand*\from{\leftarrow}
+\newcommand*\tto[1]{\xrightarrow{#1}}
+\newcommand*\tfrom[1]{\xleftarrow{#1}}
+%\newcommand*\ttto[2]{\xrightarrow[#2]{#1}}
+\newcommand*\ttto[2]{\overset{#1}{\underset{#2}{\longrightarrow}}}
+\newcommand*\rel{~\text{rel}~}
+\newcommand*\dP{\vec{P}}
+\newcommand*\bang{\mathord{!}}
+\DeclareMathOperator{\id}{id}
+\newcommand*\cptost{\textup{\textsf{st}}}
+\newcommand*\sttocp{\textup{\textsf{cp}}}
+\DeclareMathOperator{\carr}{carr}
+\DeclareMathOperator{\carrs}{carrs}
+\DeclareMathOperator{\intr}{int}
+\newcommand*\rest[1]{_{\upharpoonleft #1}}
+\newcommand*\adj[1]{\overset{#1}{\sim}}
+\newcommand*\Uh{U_\textup{h}}
+\newcommand*\Jh{J_\textup{h}}
+\newcommand*\ttilde[1]{\tilde{ \tilde #1}}
+\newcommand*\bulk[1]{B^{#1}}
+\newcommand*\initbulk[1]{i_{ \bulk{#1}}}
+
+% % Commands from Christian
+\newcommand*\evlist[1]{\ensuremath{\overrightarrow{#1}}}
+\newcommand*\executing{\ensuremath{\frac{1}{2}}}
+\newcommand*\chuPrat{\ensuremath{\mathsf{Chu}}}
+\newcommand*\chu[2]{\ensuremath{(#1,#2)}}
+\newcommand*\stintochu{\ensuremath{\mathsf{ChuST}}}
+\newcommand*\chuintost{\ensuremath{\mathsf{ST}\mathsf{chu}}}
+\newcommand*\ST{\ensuremath{\mathsf{ST}}}
+\newcommand*\allST{\ensuremath{\mathbb{ST}}}
+\newcommand*\allHDA{\ensuremath{\mathbb{HDA}}}
+\newcommand*\categoryST{\ensuremath{\allST}}
+\newcommand*\categoryChu{\ensuremath{\mathbb{CHU}}}
+\newcommand*\categoryHDA{\ensuremath{\allHDA}}
+\newcommand*\stintoh{\ensuremath{\mathsf{H}}}
+\newcommand*\stintosculpture{\ensuremath{\stintoh^{\mathsf{s}}}}
+\newcommand*\hintost{\ensuremath{\mathsf{ST}_{\pi}}}
+\newcommand*\sculpintost{\ensuremath{\mathsf{ST}_{\!\mathsf{s}}}}
+\newcommand*\hintostScultures{\ensuremath{\mathsf{ST}_{\!\mathsf{b}}}}
+\newcommand*\unfolding{\ensuremath{\mathsf{U}}}
+\newcommand*\embedMorphism{\ensuremath{\textit{em}}}
+\newcommand*\sculpture[2]{\ensuremath{#1^{#2}}}
+\newcommand*\isomorphic{\ensuremath{\cong}}
+\newcommand\defequal{\ensuremath{\overset{\scriptscriptstyle\triangle}{=}}}
+
+\newcommand*\homotopyClass[1]{\ensuremath{\overleftrightarrow{[#1]}}}
+\newcommand*\adjacentHDA{\ensuremath{\!\stackrel{adj}{\longleftrightarrow}\!}}
+\newcommand*\ladjacentHDA[1]{\ensuremath{\!\stackrel{#1}{\longleftrightarrow}\!}}
+\newcommand*\homotopicHDA{\ensuremath{\!\stackrel{hom}{\longleftrightarrow}\!}}
+\newcommand*\hhequiv{\ensuremath{\stackrel{hh}{\sim}}}
+\newcommand*\hequiv{\ensuremath{\stackrel{h}{\sim}}}
+\newcommand*\cellEquivBulk{\ensuremath{\underset{\mathsf{b}}{\sim}}}
+\newcommand*\cellEquivSculpt{\ensuremath{\overset{\mathsf{s}}{\underset{\mathsf{b}}{\sim}}}}
+\newcommand*\eventEquivBulk{\ensuremath{\overset{\mathsf{ev}}{\underset{\mathsf{b}}{\sim}}}}
+\newcommand*\eventEquivSculpt{\ensuremath{\overset{\mathsf{evs}}{\underset{\mathsf{b}}{\sim}}}}
+\newcommand*\eventEquivHDAsPart[1]{\ensuremath{\overset{\mathsf{ev}}{\underset{#1}{\sim}}}}
+\newcommand*\eventEquivHDAs{\ensuremath{\stackrel{\mathsf{ev}}{\sim}}}
+\newcommand*\equivClass[2][]{\ensuremath{[#2]\ifthenelse{\equal{#1}{}}{}{_{#1}}}}
+\newcommand\restrictedToSet[1]{\ensuremath{\!\!\upharpoonright_{#1}}}
+\newcommand\quotientofwrt[2]{\ensuremath{#1_{\!/\mathord{#2}}}}
+
+\newcommand{\transition}[1]{\ensuremath{\xrightarrow{#1}}}
+\newcommand{\transitionLabeled}[2]{\ensuremath{\xrightarrow[#1]{#2}}}
+\newcommand{\transitions}[1]{\ensuremath{\xrightarrow[s]{#1}}}
+\newcommand{\transitiont}[1]{\ensuremath{\xrightarrow[t]{#1}}}
+\newcommand\smap[1]{\ensuremath{\delta^{0}_{#1}}}
+\newcommand\tmap[1]{\ensuremath{\delta^{1}_{#1}}}
+\newcommand\stmap[1]{\ensuremath{\delta^{\nu}_{#1}}}
+\newcommand\deltachain[1]{\ensuremath{\Delta_{#1}}}
+\newcommand\finishPath[1]{\ensuremath{\mathit{en}(#1)}}
+\newcommand\startPath[1]{\ensuremath{\mathit{st}(#1)}}
+\newcommand\interleaveSquare[4]{\ensuremath{\mathit{IS}(#1,#2)(#3,#4)}}
+\newcommand\homotopyPair[4]{\ensuremath{\mathit{HP}(#1,#2)(#3,#4)}}
+
+\newcounter{ex@mples@ve}
+\newenvironment{runningexstart}{%
+  \newcounter{runningex@}
+  \setcounter{runningex@}{\value{theorem}}
+  \begin{example}}{%
+  \end{example}}
+\newenvironment{runningex}{%
+  \setcounter{ex@mples@ve}{\value{theorem}}
+  \setcounter{theorem}{\value{runningex@}}
+  \begin{example}[contd.]}{%
+  \end{example}
+  \setcounter{theorem}{\value{ex@mples@ve}}}
+
+\newcommand\xleadsto[1]{%
+    \mathrel{%
+        \begin{tikzpicture}[%
+            baseline={(current bounding box.south)}
+            ]
+        \node[%
+            ,inner sep=.44ex
+            ,align=center
+            ] (tmp) {$\scriptstyle #1$};
+        \path[%
+            ,draw,<-
+            ,decorate,decoration={%
+                ,zigzag
+                ,amplitude=0.7pt
+                ,segment length=1.2mm,pre length=3.5pt
+                }
+            ] 
+        (tmp.south east) -- (tmp.south west);
+        \end{tikzpicture}
+        }
+    }
+
+% \newcommand*\init{\textup{\textsf{init}}}
+\newcommand*\exit{\textup{\textsf{exit}}}
+\newcommand*\inv{\textup{\textsf{inv}}}
+\newcommand*\delay{\textup{\textsf{delay}}}
+\newcommand*\sem[1]{\llbracket #1\rrbracket}
+\newcommand*\ltrue{\textup{\textbf{t\!t}}}
+\newcommand*\lfalse{\textup{\textbf{ff}}}
+% \newcommand*\cmax[1]{\textup{\textsf{Cmax}}(#1)}
+\newcommand*\cmax[1]{M_{#1}}
+\newcommand*\req{\cong_{ \cmax A}\!}
+\newcommand*\liff{\Leftrightarrow}
+\newcommand*\mcal[1]{\mathcal{#1}}
+\newcommand*\mlbrace{\mathopen{\{\!\!\{}}
+\newcommand*\mrbrace{\mathclose{\}\!\!\}}}
+\newcommand*\bigmlbrace{\mathopen{\big\{\hspace{-4.5pt}\big\{}}
+\newcommand*\bigmrbrace{\mathclose{\big\}\hspace{-4.5pt}\big\}}}
+\newcommand*\tst[1]{\textit{tST}(#1)}
+\newcommand*\tw[1]{\textit{t}\,#1^*}
+\newcommand*\cosk{\textup{\textsf{cosk}}}
+\newcommand*\bigland{\bigwedge}
+\newcommand*\bigmid{\mathrel{\big|}}
+
+\newcommand*\twopar[2]{\left[\begin{smallmatrix}#1\\#2\end{smallmatrix}\right]}
+\newcommand*\threepar[3]{\left[\begin{smallmatrix}#1\\#2\\#3\end{smallmatrix}\right]}
+
+\newcommand*\georel[1]{\mathopen| #1\mathclose|}
+
+\newcommand*\dirr{\textup{dir}}
+\newcommand*\num[1]{| #1|}
+\newcommand*\evdim{\mathop{\textup{evd}}}
+\newcommand*\sts{\mathbb{S}}

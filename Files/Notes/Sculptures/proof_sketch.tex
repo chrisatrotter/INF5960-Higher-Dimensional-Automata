@@ -1,0 +1,54 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,shapes}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\title{On Bulks and Sculptures}
+
+\author{Christopher A. Trotter}
+
+\maketitle
+
+\begin{itemize}
+    \item A sculpture is a non-self linked precubical set.
+    \item Bulk is a compute non-self linked pre.cub. set.
+    \item \textbf{note:} need stronger condition for
+\end{itemize}
+
+    \noindent \textbf{Cubes}
+    
+    \noindent As a discussion in Higher dimensional automata revisited by Pratt, it was decided to define HDAs as n-cubes. In contrast an n-simplex has n+1 boundaries(e.g. a triangle has 3 edges, a tetrahedron has 4 faces), while an n-cube has 2n boundaries(e.g. a square has 4 sides, a cube has 6 faces). This leads to two natural questions: what is a cube, and how are concurrent processes defined in terms of them?
+    
+    A cubical complex is a set of n-cubes for various integers n $\geq$ 0 along with their faces of all lower dimensions, some of which may be shared with other cubes. For example two 3-cubes may have a face in common represting the concurrent execution A $\vert\vert$ B $\vert\vert$ (C;D) of event A, event B, and event sequence C;D, with shared face parallel to the AB plane at the junction of C and D, as shown below.\\
+    
+    \noindent \textbf{note:} Picture here from Higher dimensional automata revisted by Pratt page 10.\\
+    
+    
+    \noindent \textbf{Chu Spaces}
+    
+    \noindent In the cubical set approach to higher dimensional automata an automaton is a (possibly infinte) 8set of cubes of various dimensions. In the Chu space approach one starts instead with a single cube of very large, possibly infinite, dimension and "sculpts" the desired process by removing unwanted faces. The axes of the starting cube constitute the events, initially a discrete or unstructured set. The removal of states has the effect of structuring the vent set. For example sculpting renders two events equivalent, or synchronized, after all states distinguishing them have been removed.
+    
+    The sculpture way of looking at Chu sapces does not reveal the intrinsic symmetry of events and states. An alternatve presentation that brings out the symmetry better is a matrix whose rows and columns are indexed by events and states repectively, and whose entries are drawn from the set 3 = \{0, 1, 2\}. The columns of this matrix constritute the selected faces of the cube.\\
+    
+    \noindent \textbf{Sculptures}
+    
+    \noindent This is programming as sculpture: start from a sufficiently large cube and hew out the desired process by chiseling away the unwanted states. This point of view has been taken elsewhere in the higher-dimensional literature(Gou93; FGR98).
+    
+    While this view is attractively simple conceptually, it is not by itself a practical way of specifying a concurent process. An alternative approach is composition, in which complex processes are built from smaller ones with suitable operators, including intrinsically concurrent operators such as asynchronous parallel composition. Yet another approach is transformation, in which new processes are constructed from old by reshaping them appropriately.
+    
+    These three activities, sculpture, composition, and transformation, are simultaneously compatible and complementary, and can therefore usefully be taken as a basis for concurrent programming. Very loosely speaking they correspond respectively to subalgebras, products, and homomorphisms, which play central and complementary roles in the algebraic approach to both logic and programming.\\
+    
+    \noindent \textbf{Notes:}
+    
+    \noindent When looking closely at the notes made previously by Uli and me, it seems like the definition of Sculptures is defined in the same manner as Chu Spaces. The only difference is that we make explicit definitions for sculptures and bulks. This seems to be different in the idea of embedding which was defined in the ST-structure paper.\\
+    
+    \noindent I am still working on the proof, but I have noted down the general notion of Sculptures which is given by Pratt in the paper HDA revisited.
+    
+\end{document}

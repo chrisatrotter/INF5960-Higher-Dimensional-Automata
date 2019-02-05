@@ -1,0 +1,44 @@
+#### Abstraction ####
+
+#####################
+
+Machine learning and Robotics research in CPS
+
+Robot reinforcement learning
+
+Challenges: Dimensionality
+Real world evnironment
+Exploration
+
+Value-based reinforecement learning:
+	Estimate value function:
+		- Global estimate for all reachable sates
+		- Hard to scale to high-D.
+		- Approximations might "destroy" policy
+
+Policy Search Methods
+	Use aprametrized policy
+	Correlated local exploration
+	Locally optimal solutions
+
+Gaussian distributions have nice properties that are local to the parameter space.
+
+Contextual policy search vs. hierarchical policy search
+
+Taxonomy of Policy search algorithms
+
+Model-Free policy search methods
+	- policy gradients
+	- Natural gradients
+	- Exact Information Geometric updates
+	- Success matching
+
+Policy search for Multi-Agent Systems
+
+Taxonomy of policy search algorithms:
+	- Trajectory-based vs. action-based.
+
+
+Note: Get a undestanding of the parameter space: Is this the same notion as in programming? Functional approach?
+
+Is it possible to start with trajectory-based and then slowly intergrate to action-based?

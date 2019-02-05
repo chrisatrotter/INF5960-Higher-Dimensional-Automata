@@ -1,0 +1,48 @@
+#### Abstraction ####
+This talk will focus on the implementation of distributed control applications on embedded platforms. Many embedded systems now consist of up to 100 processors or electronic control units (ECUs) that communicate using different bus protocols like FlexRay, CAN or Ethernet. Such a setup is common in the automotive domain, as well as in many other domains like avionics, industrial automation and smart buildings. Traditionally, the process of designing control algorithms start with system identification or modeling, followed by determining the appropriate control laws, computing their parameters, and finally verification or simulation to ensure that the required control performance requirements are satisfied.
+
+However, all of these are done at a high level of abstraction where most of the implementation details are either neglected or modeled in a pessimistic manner as a lumped error. However, as embedded systems become more complex, such an approach either leads to a large semantic gap between high-level controller models and their actual implementations, or an unnecessarily expensive or pessimistic design.
+
+We will discuss techniques for addressing this problem, through a cyber-physical systems oriented design approach, which requires a co-design of controllers and the architectures on which they are implemented. In particular, we will show how taking conventional platform resources - such as computation, communication, and memory - into account necessitates a redesign of control algorithms compared to traditional controller design approaches that are agnostic to such resources. 
+#####################
+
+Embedded control systems
+
+Control theory -> how to close the gap between the simulation to the expected result.
+
+The design flow of creating a embedded control system.
+
+Controller design semantic gap between model and implementation in the contoller implementation.
+
+In computer science, what is the notion of efficiency? As little memory footprint as possible and as fast as possible.
+
+Time-analysis domain and the control theory domain.
+
+Characteristic of network is given and from those assumptions, one is trying to design the controller.
+In ANCS, is such that the network is not given, and what is done is that there is spent time designing the network and then controller.
+
+Note: I should have taken signal processing course for these lectures.
+
+The worst response time is an analysis of the scheduling of the processes.
+
+time-triggered arbitrarity response time.
+
+event-triggered response time.
+
+Time-trirggered Bus Protocol
+	A - Software real-time
+	B - Hardware real-time
+
+Event-Triggered Bus Protocol
+	Event is difficult to guarantee hardware guarantees.
+
+Hybrid communication(FlexRay)
+
+Communication cycle:
+	TDMA - Static
+	FPNP - Dynamic
+
+IMPORTANT: !Controller design level - what is this and figure this out.
+
+Model semantics is the main focus of what I am doing. I have to be able to understand the
+relation of model semantics and the actual code.

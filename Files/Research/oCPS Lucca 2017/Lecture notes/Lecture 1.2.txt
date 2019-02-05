@@ -1,0 +1,83 @@
+#### Abstraction ####
+Cyber-Physical Systems (CPS) are an instance of hybrid systems that combine physical components governed by time-driven dynamics and computer-based components with event-driven dynamics. We will outline the differences between these two types of systems from a modeling, control, and optimization standpoint and discuss examples of CPS and related technical challenges. We will also try to place CPS-related problems in a unifying multi-agent network system framework. 
+#####################
+
+Cyber-physical systems Motivations
+
+What is a cyber-physcial system?
+
+Cyber - Internett sending packages
+Physical - is the number of devices that have different applications.
+IOT - is the hybrid-system.
+
+A smart city consists of four processes:
+
+Data collection - sensor network
+Information processing - Big Data
+Decision Making - 
+control and optimization - 
+
+
+there are also constraints on the outside of these processes such as safety, security, privacy, etc.
+
+Cyer block contains a model such that it contains Data collection and information processing.
+Since we are making decision of physical components, we have to understand the physics. We need to understand the time restraints.
+
+This is called a whole system of hybrid systems. it switches between cyber and physical since they are bidirectional.
+
+Action and information is mandatory to create a good decision of what to do and to have a whole.
+
+
+Modeling Time-driven vs Event-driven
+
+state space are run by dynamics. You can't talk about the physical interpretations of the states.
+
+Events is a piece wise trajectory. It is important the order of the events.
+
+Everything is dependent of the clock on time-driven event. (time driven). synchrounous events.
+
+The switch is king by the way the event-state(event-driven). asynchronous event
+
+Many systems are naturally discrete event systems(DES)(Internett). all state trainsitions are event driven.
+
+Most of the rest are Hybrid systems(HS), some state transitions are event-driven.
+
+Many systems are distributed, components interact asynchronous(through events).
+
+Stochastic is the reaction to random events, since these need to be handle.
+
+Synchronous vs. asynchronous behavior
+
+Industinguishable events and increasing time granularity.
+
+In cyber physical systems it is important to hook up the different devices and that is needed by a multi-agent framework.
+
+Parametric optimization.
+
+Ideas: I am working with models for concurrency based on HDAs an ST-structures, derived from configuration structures.
+		First I need to understand where in the big picture this falls. Secondly, I need to see how the development of ST
+		and HDA fall in the picture of sculptures and how we can further find the application of sculptures.
+
+Sense: Where I believe this fits in the bigger picture is into the complex between the time-driven and event-driven issues.
+		As mentioned under the lecture of Christos G. Cassandras he emphesized the approach of time-driven over event-driven and
+		that if the perspective would change to more of an event perspective, the gain would be great.(maybe, need further investigation).
+
+		Most of the early research has focused on the state-based/time-based approach where a clock is the king. It is a set time where
+		certain things may happen and must happen. This can cause large time tickets where the system might be highly ineffective by activating
+		when the system is mostly inactive.
+
+		A newer approach is that of event-based allowing the trigger/switch to be king. It is then a certain action that happens to trigger a specific
+		event. This approach seems more feasible and better for long time IOT devices to stay alive.
+
+Focus: I should focus on the Distributed CPS as it is a project in Oslo working on this specifically. What is a distributed CPS? Is it the focus
+		on the distributed elements of the CPS.
+
+		As described above, Cyber is the internet communication with packages and all such.
+		Physical is the actual devices where the IOT comes into focus.
+
+Idea 2: Potential application of the models of concurrency would be best applicable in Distributed CPS. Figure out how.
+
+
+
+
+
