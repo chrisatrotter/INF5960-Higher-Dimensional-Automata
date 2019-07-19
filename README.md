@@ -1,6 +1,6 @@
 # INF5960 - Higher-Dimensional Automata
 
-## A Non-Sculpting Theorem in Non-Interleaving Models for Concurrency
+## [A Non-Sculpting Theorem in Non-Interleaving Models for Concurrency](https://www.mn.uio.no/ifi/english/research/groups/psy/completedmasters/2018/trotter/masterthesis-trotter.pdf)
 Modern concurrent systems are considered challenging to reason about because of the nature of concurrent behaviour. Concurrency is highly pervasive and often found on all levels of computation. Since concurrency is unambiguous and pervasive, mathematical models are necessary for reasoning about concurrent behaviour. Non-interleaving models are promising when considering the incremental development of concurrent systems. The incremental development considers a method known as action refinement. Action refinement is the method of developing a system by starting with an abstract specification and gradually refining its action by providing more details. However, non-interleaving models lack a tractable algebraic theory. Algebraic topology has been used to define a geometric model of concurrency that has a natural algebraic structure, that is, overcoming the lack of a tractable algebraic theory. This model was named higher-dimensional automata and is a geometric model of concurrency shown to capture main characteristics of both interleaving and non-interleaving models, that is, higher-dimensional automata are highly expressive.
 
 
